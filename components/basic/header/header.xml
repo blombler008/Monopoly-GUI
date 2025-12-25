@@ -1,0 +1,82 @@
+<component>
+	<previews>
+		<!-- To see the panel on both with light and dark theme -->
+		<preview style_bg_color="0x888" />
+	</previews>
+
+	<api>
+		<prop name="title" type="string" default=" " />
+	</api>
+	<styles>
+		<style
+			name="style_header_bar"
+			bg_color="0x080808"
+			width="320"
+			height="30"
+			border_side="bottom"
+			radius="0"
+			border_width="1px"
+			border_color="0x272727"
+			pad_all="0px"
+			margin_all="0px"
+		/>
+		<style
+			name="style_header_clock"
+			text_align="center"
+			align="right_mid"
+			text_color="0xdddddd"
+			margin_ver="7px"
+			margin_right="4"
+			pad_right="0"
+			height="16px"
+			translate_y="1"
+			translate_x="-4"
+		/>
+		<style
+			name="style_header_status_icons"
+			flex_main_place="end"
+			height="28px"
+			translate_x="-52"
+			align="right_mid"
+			margin_all="0px"
+			pad_all="4px"
+			pad_column="8px"
+			translate_y="1px"
+			width="84"
+		/>
+		<style
+			name="style_header_title"
+			align="left_mid"
+			width="184"
+			pad_left="12"
+			height="20"
+			text_color="0xdddddd"
+			translate_y="1"
+		/>
+	</styles>
+
+	<view scrollable="false">
+		<style name="style_header_bar" />
+		<timehead>
+			<style name="style_header_clock" />
+		</timehead>
+		<label translation_tag="$title" long_mode="dots">
+			<style name="style_header_title" />
+		</label>
+
+		<row>
+			<style name="style_header_status_icons" />
+			<lv_image src="bluetooth">
+				<bind_flag_if_eq subject="bluetooth_on" flag="hidden" ref_value="0" />
+			</lv_image>
+
+			<lv_image src="nfc">
+				<bind_flag_if_eq subject="nfc_on" flag="hidden" ref_value="0" />
+			</lv_image>
+
+			<lv_image src="wifi">
+				<bind_flag_if_eq subject="wifi_on" flag="hidden" ref_value="0" />
+			</lv_image>
+		</row>
+	</view>
+</component>

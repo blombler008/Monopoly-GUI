@@ -1,0 +1,28 @@
+<screen permanent="true">
+	<styles />
+	<view>
+		<header title="Monopoly" />
+		<content>
+			<card>
+				<label
+					tag="text_welcome"
+					width="100%"
+					style_text_align="center"
+					style_text_font="RobotoB_24"
+					style_text_letter_space="1"
+				/>
+				<label tag="text_welcome_info" width="100%" style_text_align="center" />
+			</card>
+			<card>
+				<label tag="gameinfo display" />
+				<button tag="settings">
+					<screen_load_event screen="settings" trigger="clicked" />
+				</button>
+			</card>
+
+			<button tag="game_start" button_type="1">
+				<!-- <screen_load_event screen="game_start" trigger="clicked" /> -->
+			</button>
+		</content>
+	</view>
+</screen>

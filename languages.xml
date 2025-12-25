@@ -1,0 +1,19 @@
+<translations languages="en de">
+	<translation tag="back" en="back" de="zurück" />
+	<translation tag="about" en="About" de="Über" />
+	<translation tag="settings" en="Settings" de="Einstellungen" />
+	<translation tag="cancel" en="Cancel" de="Abbrechen" />
+	<translation tag="add_card" en="Add Player" de="Spieler Hinzufügen" />
+	<translation tag="searching_card" en="Searching for card..." de="Karte wird gesucht..." />
+	<translation tag="player_settings" en="Player Settings" de="Spieler Einstellungen" />
+	<translation tag="audio_settings" en="Audio Settings" de="Audio Einstellungen" />
+	<translation tag="game_settings" en="Game Settings" de="Spiel Einstellungen" />
+	<translation tag="connection_settings" en="Connectivity" de="Konnektivität" />
+	<translation tag="text_welcome" en="Monopoly Banking" de="Monopoly Banking" />
+	<translation
+		tag="text_welcome_info"
+		en="Based on the Monopoly: The Mega Edition"
+		de="Basierend auf Monopoly: Die Mega Edition"
+	/>
+	<translation tag="game_start" en="Start Game" de="Spiel Starten" />
+</translations>
