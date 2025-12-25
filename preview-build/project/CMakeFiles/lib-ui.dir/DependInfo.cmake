@@ -26,6 +26,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/lved/project/components/cards/playerSettingsCard/playerSettingsCard_gen.c" "project/CMakeFiles/lib-ui.dir/components/cards/playerSettingsCard/playerSettingsCard_gen.c.o" "gcc" "project/CMakeFiles/lib-ui.dir/components/cards/playerSettingsCard/playerSettingsCard_gen.c.o.d"
   "/lved/project/screens/about/about_gen.c" "project/CMakeFiles/lib-ui.dir/screens/about/about_gen.c.o" "gcc" "project/CMakeFiles/lib-ui.dir/screens/about/about_gen.c.o.d"
   "/lved/project/screens/add_card/add_card_gen.c" "project/CMakeFiles/lib-ui.dir/screens/add_card/add_card_gen.c.o" "gcc" "project/CMakeFiles/lib-ui.dir/screens/add_card/add_card_gen.c.o.d"
+  "/lved/project/screens/game_start/game_start_gen.c" "project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o" "gcc" "project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o.d"
   "/lved/project/screens/settings/settings_gen.c" "project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o" "gcc" "project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o.d"
   "/lved/project/screens/welcome/welcome_gen.c" "project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o" "gcc" "project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o.d"
   )

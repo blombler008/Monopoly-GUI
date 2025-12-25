@@ -48,8 +48,8 @@ lv_obj_t * about_create(void)
     lv_obj_t * header_0 = header_create(lv_obj_0, "about");
     
     lv_obj_t * content_0 = content_create(lv_obj_0);
-    lv_obj_t * lv_qrcode_0 = lv_qrcode_create(content_0);
-    lv_qrcode_set_data(lv_qrcode_0, "https://tattyhost.com");
+    // lv_obj_t * lv_qrcode_0 = lv_qrcode_create(content_0);
+    // lv_qrcode_set_data(lv_qrcode_0, "https://tattyhost.com");
     
     lv_obj_t * button_0 = button_create(content_0, "back", 2);
     lv_obj_add_screen_load_event(button_0, LV_EVENT_CLICKED, settings, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);

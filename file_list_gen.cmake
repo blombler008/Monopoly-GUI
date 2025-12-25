@@ -19,5 +19,6 @@ list(
   ${CMAKE_CURRENT_LIST_DIR}/Monopoly.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/about/about_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/add_card/add_card_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/game_start/game_start_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/settings/settings_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/welcome/welcome_gen.c)

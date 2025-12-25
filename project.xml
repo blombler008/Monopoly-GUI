@@ -1,6 +1,6 @@
 <project name="Monopoly">
 	<targets>
-		<target name="target">
+		<target name="welcome">
 			<display width="320" height="240" color_format="rgb565" />
 		</target>
 	</targets>

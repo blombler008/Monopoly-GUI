@@ -16,4 +16,7 @@
 		de="Basierend auf Monopoly: Die Mega Edition"
 	/>
 	<translation tag="game_start" en="Start Game" de="Spiel Starten" />
+	<translation tag="players" en="Players: " de="Spieler: " />
+	<translation tag="start_cash" en="Starting Cash: " de="Start Geld: " />
+	<translation tag="gameinfo_display" en="Game Information" de="Spiel Information" />
 </translations>

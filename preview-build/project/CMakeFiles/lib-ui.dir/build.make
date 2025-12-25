@@ -27,6 +27,9 @@
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -339,11 +342,26 @@ project/CMakeFiles/lib-ui.dir/screens/add_card/add_card_gen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/screens/add_card/add_card_gen.c.s"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/screens/add_card/add_card_gen.c -o CMakeFiles/lib-ui.dir/screens/add_card/add_card_gen.c.s
 
+project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
+project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
+project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o: ../screens/game_start/game_start_gen.c
+project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o -MF CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o.d -o CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o -c /lved/project/screens/game_start/game_start_gen.c
+
+project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.i"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /lved/project/screens/game_start/game_start_gen.c > CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.i
+
+project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.s"
+	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /lved/project/screens/game_start/game_start_gen.c -o CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.s
+
 project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o: project/CMakeFiles/lib-ui.dir/flags.make
 project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o: ../screens/settings/settings_gen.c
 project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o -MF CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o.d -o CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o -c /lved/project/screens/settings/settings_gen.c
 
 project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.i: cmake_force
@@ -358,7 +376,7 @@ project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o: project/CMakeFile
 project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o: project/CMakeFiles/lib-ui.dir/includes_C.rsp
 project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o: ../screens/welcome/welcome_gen.c
 project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o: project/CMakeFiles/lib-ui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o"
 	cd /lved/project/preview-build/project && /emsdk/upstream/emscripten/emcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o -MF CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o.d -o CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o -c /lved/project/screens/welcome/welcome_gen.c
 
 project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.i: cmake_force
@@ -389,6 +407,7 @@ lib__ui_OBJECTS = \
 "CMakeFiles/lib-ui.dir/Monopoly.c.o" \
 "CMakeFiles/lib-ui.dir/screens/about/about_gen.c.o" \
 "CMakeFiles/lib-ui.dir/screens/add_card/add_card_gen.c.o" \
+"CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o" \
 "CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o" \
 "CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o"
 
@@ -413,11 +432,12 @@ project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/Monopoly_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/Monopoly.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/screens/about/about_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/screens/add_card/add_card_gen.c.o
+project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/build.make
 project/liblib-ui.a: project/CMakeFiles/lib-ui.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking C static library liblib-ui.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/lved/project/preview-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking C static library liblib-ui.a"
 	cd /lved/project/preview-build/project && $(CMAKE_COMMAND) -P CMakeFiles/lib-ui.dir/cmake_clean_target.cmake
 	cd /lved/project/preview-build/project && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lib-ui.dir/link.txt --verbose=$(VERBOSE)
 

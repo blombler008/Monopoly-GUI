@@ -31,6 +31,9 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -562,6 +565,30 @@ screens/add_card/add_card_gen.c.s:
 	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/screens/add_card/add_card_gen.c.s
 .PHONY : screens/add_card/add_card_gen.c.s
 
+screens/game_start/game_start_gen.o: screens/game_start/game_start_gen.c.o
+.PHONY : screens/game_start/game_start_gen.o
+
+# target to build an object file
+screens/game_start/game_start_gen.c.o:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o
+.PHONY : screens/game_start/game_start_gen.c.o
+
+screens/game_start/game_start_gen.i: screens/game_start/game_start_gen.c.i
+.PHONY : screens/game_start/game_start_gen.i
+
+# target to preprocess a source file
+screens/game_start/game_start_gen.c.i:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.i
+.PHONY : screens/game_start/game_start_gen.c.i
+
+screens/game_start/game_start_gen.s: screens/game_start/game_start_gen.c.s
+.PHONY : screens/game_start/game_start_gen.s
+
+# target to generate assembly for a file
+screens/game_start/game_start_gen.c.s:
+	cd /lved/project/preview-build && $(MAKE) $(MAKESILENT) -f project/CMakeFiles/lib-ui.dir/build.make project/CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.s
+.PHONY : screens/game_start/game_start_gen.c.s
+
 screens/settings/settings_gen.o: screens/settings/settings_gen.c.o
 .PHONY : screens/settings/settings_gen.o
 
@@ -673,6 +700,9 @@ help:
 	@echo "... screens/add_card/add_card_gen.o"
 	@echo "... screens/add_card/add_card_gen.i"
 	@echo "... screens/add_card/add_card_gen.s"
+	@echo "... screens/game_start/game_start_gen.o"
+	@echo "... screens/game_start/game_start_gen.i"
+	@echo "... screens/game_start/game_start_gen.s"
 	@echo "... screens/settings/settings_gen.o"
 	@echo "... screens/settings/settings_gen.i"
 	@echo "... screens/settings/settings_gen.s"

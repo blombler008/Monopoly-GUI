@@ -39,6 +39,7 @@
  *  Permanent screens
  *-------------------*/
 
+lv_obj_t * game_start = NULL;
 lv_obj_t * settings = NULL;
 lv_obj_t * welcome = NULL;
 
@@ -69,6 +70,8 @@ lv_style_t style_text;
  * Subjects
  *----------------*/
 
+lv_subject_t start_cash;
+lv_subject_t player_count;
 lv_subject_t bluetooth_on;
 lv_subject_t wifi_on;
 lv_subject_t nfc_on;
@@ -136,6 +139,12 @@ void Monopoly_init_gen(const char * asset_path)
     /*----------------
      * Subjects
      *----------------*/
+    lv_subject_init_int(&start_cash, 1500);
+    lv_subject_set_min_value_int(&start_cash, 0);
+    lv_subject_set_max_value_int(&start_cash, 500000);
+    lv_subject_init_int(&player_count, 0);
+    lv_subject_set_min_value_int(&player_count, 0);
+    lv_subject_set_max_value_int(&player_count, 8);
     lv_subject_init_int(&bluetooth_on, 0);
     lv_subject_set_min_value_int(&bluetooth_on, 0);
     lv_subject_set_max_value_int(&bluetooth_on, 1);
@@ -172,6 +181,8 @@ void Monopoly_init_gen(const char * asset_path)
     lv_xml_register_font(NULL, "RobotoB_24", RobotoB_24);
 
     /* Register subjects */
+    lv_xml_register_subject(NULL, "start_cash", &start_cash);
+    lv_xml_register_subject(NULL, "player_count", &player_count);
     lv_xml_register_subject(NULL, "bluetooth_on", &bluetooth_on);
     lv_xml_register_subject(NULL, "wifi_on", &wifi_on);
     lv_xml_register_subject(NULL, "nfc_on", &nfc_on);
@@ -201,9 +212,11 @@ void Monopoly_init_gen(const char * asset_path)
     /* If XML is enabled it's assumed that the permanent screens are created
      * manaully from XML using lv_xml_create() */
     /* To allow screens to reference each other, create them all before calling the sceen create functions */
+    game_start = lv_obj_create(NULL);
     settings = lv_obj_create(NULL);
     welcome = lv_obj_create(NULL);
 
+    game_start_create();
     settings_create();
     welcome_create();
 #endif

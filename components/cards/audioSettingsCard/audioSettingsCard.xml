@@ -11,7 +11,7 @@
 		<style name="style_main" />
 		<card>
 			<row>
-				<lv_label translation_tag="audio_settings" />
+				<label translation_tag="audio_settings" />
 			</row>
 		</card>
 	</view>

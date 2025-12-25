@@ -53,8 +53,8 @@ lv_obj_t * gameSettingsCard_create(lv_obj_t * parent)
     lv_obj_add_style(lv_obj_0, &style_main, 0);
     lv_obj_t * card_0 = card_create(lv_obj_0);
     lv_obj_t * row_0 = row_create(card_0);
-    lv_obj_t * lv_label_0 = lv_label_create(row_0);
-    lv_label_set_translation_tag(lv_label_0, "game_settings");
+    lv_obj_t * label_0 = label_create(row_0, " ");
+    lv_label_set_translation_tag(label_0, "game_settings");
 
     LV_TRACE_OBJ_CREATE("finished");
 

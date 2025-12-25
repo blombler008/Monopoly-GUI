@@ -35,6 +35,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/lib-ui.dir/screens/about/about_gen.c.o.d"
   "CMakeFiles/lib-ui.dir/screens/add_card/add_card_gen.c.o"
   "CMakeFiles/lib-ui.dir/screens/add_card/add_card_gen.c.o.d"
+  "CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o"
+  "CMakeFiles/lib-ui.dir/screens/game_start/game_start_gen.c.o.d"
   "CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o"
   "CMakeFiles/lib-ui.dir/screens/settings/settings_gen.c.o.d"
   "CMakeFiles/lib-ui.dir/screens/welcome/welcome_gen.c.o"

@@ -91,6 +91,7 @@ extern "C" {
  * Permanent screens
  *------------------*/
 
+extern lv_obj_t * game_start;
 extern lv_obj_t * settings;
 extern lv_obj_t * welcome;
 
@@ -124,6 +125,8 @@ extern const void * nfc;
  * Subjects
  *----------------*/
 
+extern lv_subject_t start_cash;
+extern lv_subject_t player_count;
 extern lv_subject_t bluetooth_on;
 extern lv_subject_t wifi_on;
 extern lv_subject_t nfc_on;
@@ -173,6 +176,7 @@ void Monopoly_init_gen(const char * asset_path);
 #include "components/cards/playerSettingsCard/playerSettingsCard_gen.h"
 #include "screens/about/about_gen.h"
 #include "screens/add_card/add_card_gen.h"
+#include "screens/game_start/game_start_gen.h"
 #include "screens/settings/settings_gen.h"
 #include "screens/welcome/welcome_gen.h"
 

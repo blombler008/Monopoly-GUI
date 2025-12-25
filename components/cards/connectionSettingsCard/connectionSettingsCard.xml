@@ -11,7 +11,7 @@
 		<style name="style_main" />
 		<card>
 			<row>
-				<lv_label translation_tag="connection_settings" />
+				<label translation_tag="connection_settings" />
 			</row>
 			<row width="100%" style_flex_main_place="start">
 				<lv_checkbox text="Bluetooth" bind_checked="bluetooth_on" />
