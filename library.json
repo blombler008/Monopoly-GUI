@@ -1,0 +1,16 @@
+{
+  "name": "Monopoly_GUI",
+  "version": "1.0.0",
+  "description": "Monopoly Game GUI for ESP32 with LVGL",
+  "keywords": ["lvgl", "esp32", "gui", "monopoly"],
+  "authors": [
+    {
+      "name": "blombler008"
+    }
+  ],
+  "frameworks": ["arduino"],
+  "platforms": ["espressif32"],
+  "build": {
+    "srcDir": "src"
+  }
+}

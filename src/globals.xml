@@ -1,0 +1,112 @@
+<globals>
+	<api>
+		<!-- Add <enumdefs> here -->
+	</api>
+
+	<consts>
+		<!-- Add <px>, <int>, <color> etc here -->
+
+		<int name="unit_sm" value="6" />
+		<int name="unit_md" value="12" />
+		<int name="unit_lg" value="18" />
+		<int name="unit_xl" value="24" />
+
+		<percentage name="opa_muted" value="20%" />
+
+		<color name="text_color" value="0xdddddd" />
+		<color name="light" value="0xffffff" />
+		<color name="dark" value="0x0e0e0e" />
+		<color name="surface_primary_light" value="0x0e0e0e" />
+		<color name="text_on_surface_primary_light" value="0xffffff" />
+		<color name="surface_primary_dark" value="0xffffff" />
+		<color name="text_on_surface_primary_dark" value="0x0e0e0e" />
+		<color name="bg_primary_light" value="0xffffff" />
+		<color name="bg_primary_dark" value="0x0e0e0e" />
+		<color name="bg_secondary_light" value="0xf0f0f0" />
+		<color name="bg_secondary_dark" value="0x373130" />
+		<color name="bg_tertiary_light" value="0xf0f0f0" />
+		<color name="bg_tertiary_dark" value="0x373130" />
+		<color name="accent1_light" value="0xAF4ADE" />
+		<color name="accent1_dark" value="0xAF4ADE" />
+		<color name="accent1_50_light" value="0xD2B1F6" />
+		<color name="accent1_50_dark" value="0x7E4CB7" />
+		<color name="accent2_light" value="0xe9deaf" />
+		<color name="accent2_dark" value="0x887A3D" />
+		<color name="accent2_50_light" value="0xf3f0e7" />
+		<color name="accent2_50_dark" value="0x4A473E" />
+	</consts>
+	<styles>
+		<style name="style_text" text_color="#text_color" text_font="Roboto_16" />
+		<!-- Add <style> tags here -->
+	</styles>
+
+	<subjects>
+		<!-- Add <int>, <string>, or <float> subjects here -->
+		<int name="start_cash" min_value="0" max_value="500000" value="1500" />
+		<int name="player_count" min_value="0" max_value="8" value="0" />
+		<int name="bluetooth_on" min_value="0" max_value="1" value="0" />
+		<int name="wifi_on" min_value="0" max_value="1" value="0" />
+		<int name="nfc_on" min_value="0" max_value="1" value="0" />
+		<int name="battery_level" min_value="0" max_value="100" value="50" />
+
+		<int name="time_minutes" min_value="0" max_value="59" value="34" />
+		<int name="time_hours" min_value="0" max_value="23" value="12" />
+
+		<int name="button_sec" value="0" />
+		<int name="button_pri" value="1" />
+		<int name="button_invis" value="2" />
+	</subjects>
+
+	<images>
+		<!-- Add <file> or <data> tags here -->
+		<file
+			name="bluetooth"
+			file_format="png"
+			src_path="/images/bluetooth_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png"
+		/>
+		<file name="wifi" file_format="png" src_path="/images/wifi_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png" />
+		<file name="nfc" file_format="png" src_path="/images/contactless_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png" />
+	</images>
+
+	<fonts>
+		<!-- Add <bin> , <tiny_ttf>, <freetype> tags here -->
+		<bin
+			src_path="/fonts/Roboto-Regular.ttf"
+			name="Roboto_16"
+			range="0x20-0x7F"
+			symbols="äöüÄÖÜß"
+			as_file="true"
+			size="16"
+			bpp="4"
+		/>
+
+		<bin
+			src_path="/fonts/Roboto-Regular.ttf"
+			name="Roboto_24"
+			range="0x20-0x7F"
+			symbols="äöüÄÖÜß"
+			as_file="true"
+			size="24"
+			bpp="4"
+		/>
+
+		<bin
+			src_path="/fonts/Roboto-Bold.ttf"
+			name="RobotoB_16"
+			range="0x20-0x7F"
+			symbols="äöüÄÖÜß"
+			as_file="true"
+			size="16"
+			bpp="4"
+		/>
+		<bin
+			src_path="/fonts/Roboto-Bold.ttf"
+			name="RobotoB_24"
+			range="0x20-0x7F"
+			symbols="äöüÄÖÜß"
+			as_file="true"
+			size="24"
+			bpp="4"
+		/>
+	</fonts>
+</globals>

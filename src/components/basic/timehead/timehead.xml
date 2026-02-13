@@ -1,0 +1,39 @@
+<component>
+	<previews>
+		<!-- To see the panel on both with light and dark theme -->
+		<preview style_bg_color="0x888" />
+	</previews>
+
+	<styles>
+		<style
+			name="style_header_clock"
+			text_align="center"
+			align="right_mid"
+			text_color="0xdddddd"
+			margin_ver="7px"
+			margin_right="0"
+			height="16px"
+			width="48px"
+			translate_y="1"
+		/>
+		<style name="style_time_hours" align="left_mid" width="20px" text_align="right" />
+		<style name="style_time_div" align="center" width="4px" text_align="center" />
+		<style name="style_time_minutes" align="right_mid" width="20px" text_align="left" />
+	</styles>
+	<view>
+		<remove_style_all />
+		<style name="style_header_clock" />
+		<lv_label bind_text-fmt="%02d" bind_text="time_hours">
+			<style name="style_text" />
+			<style name="style_time_hours" />
+		</lv_label>
+		<lv_label text=":">
+			<style name="style_text" />
+			<style name="style_time_div" />
+		</lv_label>
+		<lv_label bind_text-fmt="%02d" bind_text="time_minutes">
+			<style name="style_text" />
+			<style name="style_time_minutes" />
+		</lv_label>
+	</view>
+</component>

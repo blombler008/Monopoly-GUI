@@ -1,0 +1,40 @@
+<screen permanent="true">
+	<styles />
+	<view>
+		<header title="Monopoly" />
+		<content>
+			<card>
+				<label
+					tag="text_welcome"
+					width="100%"
+					style_text_align="center"
+					style_text_font="RobotoB_24"
+					style_text_letter_space="1"
+				/>
+				<label tag="text_welcome_info" width="100%" style_text_align="center" />
+			</card>
+			<button tag="game_start" button_type="1">
+				<screen_load_event screen="game_start" trigger="clicked" />
+			</button>
+			<card>
+				<row width="100%" style_layout="none">
+					<label tag="gameinfo_display" align="left_mid" />
+					<button tag="settings" align="right_mid">
+						<screen_load_event screen="settings" trigger="clicked" />
+					</button>
+				</row>
+
+				<row width="100%" style_layout="none">
+					<label tag="players" align="left_mid" />
+					<label bind_text="player_count" align="right_mid" />
+				</row>
+				<row width="100%" style_layout="none">
+					<label tag="start_cash" />
+					<lv_label bind_text="start_cash" bind_text-fmt="M %d" align="right_mid">
+						<style name="style_text" />
+					</lv_label>
+				</row>
+			</card>
+		</content>
+	</view>
+</screen>
