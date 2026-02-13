@@ -110,8 +110,8 @@ lved__runtime_EXTERNAL_OBJECTS =
 /lved/preview-bin/lved-runtime.js: CMakeFiles/lved-runtime.dir/src/getrandom_compat.c.o
 /lved/preview-bin/lved-runtime.js: CMakeFiles/lved-runtime.dir/src/runtime.c.o
 /lved/preview-bin/lved-runtime.js: CMakeFiles/lved-runtime.dir/build.make
-/lved/preview-bin/lved-runtime.js: /lved/resources/lib/liblvgl.a
 /lved/preview-bin/lved-runtime.js: project/liblib-ui.a
+/lved/preview-bin/lved-runtime.js: /lved/resources/lib/liblvgl.a
 /lved/preview-bin/lved-runtime.js: CMakeFiles/lved-runtime.dir/linklibs.rsp
 /lved/preview-bin/lved-runtime.js: CMakeFiles/lved-runtime.dir/objects1.rsp
 /lved/preview-bin/lved-runtime.js: CMakeFiles/lved-runtime.dir/link.txt

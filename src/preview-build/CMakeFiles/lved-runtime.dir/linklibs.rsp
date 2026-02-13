@@ -1,1 +1,1 @@
- /lved/resources/lib/liblvgl.a -lm project/liblib-ui.a 
+ project/liblib-ui.a /lved/resources/lib/liblvgl.a -lm 

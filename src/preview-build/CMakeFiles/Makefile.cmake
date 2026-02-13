@@ -9,6 +9,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
   "/lved/project/CMakeLists.txt"
+  "/lved/project/component_lib_list_gen.cmake"
   "/lved/project/file_list_gen.cmake"
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"

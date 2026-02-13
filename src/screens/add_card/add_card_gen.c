@@ -8,7 +8,7 @@
  *********************/
 
 #include "add_card_gen.h"
-#include "Monopoly.h"
+#include "../../Monopoly.h"
 
 /*********************
  *      DEFINES

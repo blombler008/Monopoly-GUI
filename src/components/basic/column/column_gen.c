@@ -8,7 +8,7 @@
  *********************/
 
 #include "column_gen.h"
-#include "Monopoly.h"
+#include "../../../Monopoly.h"
 
 /*********************
  *      DEFINES
