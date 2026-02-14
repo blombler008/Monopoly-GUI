@@ -14,6 +14,8 @@
 		<percentage name="opa_muted" value="20%" />
 
 		<color name="text_color" value="0xdddddd" />
+
+		<color name="text_color_dark" value="0x0e0e0e" />
 		<color name="light" value="0xffffff" />
 		<color name="dark" value="0x0e0e0e" />
 		<color name="surface_primary_light" value="0x0e0e0e" />
@@ -37,6 +39,7 @@
 	</consts>
 	<styles>
 		<style name="style_text" text_color="#text_color" text_font="Roboto_16" />
+		<style name="style_text_dark" text_color="#text_color_dark" text_font="Roboto_16" />
 		<!-- Add <style> tags here -->
 	</styles>
 
