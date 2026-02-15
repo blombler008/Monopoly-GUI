@@ -14,8 +14,8 @@
 		<percentage name="opa_muted" value="20%" />
 
 		<color name="text_color" value="0xdddddd" />
-
 		<color name="text_color_dark" value="0x0e0e0e" />
+
 		<color name="light" value="0xffffff" />
 		<color name="dark" value="0x0e0e0e" />
 		<color name="surface_primary_light" value="0x0e0e0e" />
