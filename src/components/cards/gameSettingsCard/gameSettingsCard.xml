@@ -13,6 +13,10 @@
 			<row>
 				<label translation_tag="game_settings" />
 			</row>
+			<row width="100%" style_layout="none">
+				<label translation_tag="player_count" align="left_mid" />
+				<spin_label align="right_mid" />
+			</row>
 		</card>
 	</view>
 </component>
