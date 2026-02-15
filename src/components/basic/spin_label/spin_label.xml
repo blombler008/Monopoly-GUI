@@ -4,21 +4,45 @@
 		<preview style_bg_color="0x888" />
 	</previews>
 
-	<view height="content" width="content" flex_flow="row" style_margin_all="0" style_pad_all="0">
-		<style name="style_text_dark" />
+	<styles>
+		<style name="pg" 
+			bg_color="#bg_tertiary_dark" 
+			layout="flex" 
+			bg_opa="255"  
+			height="content" 
+			width="content" 
+			flex_flow="row" 
+			margin_all="8" 
+			pad_all="8"
+			radius="5"
+		/>
+	</styles>
+
+	<api>
+		<prop name="subject" default="player_count" type="subject" />
+		<prop name="max" default="8" type="int" />
+		<prop name="min" default="2" type="int" />
+	</api>
+
+	<view>
+		<remove_style_all  />
+		<style name="pg" />
+
 
 		<button tag=" +" width="37px" height="37px">
-			<subject_increment_event step="1" subject="player_count" rollover="true" max_value="8" min_value="2" />
+			<subject_increment_event step="1" subject="$subject" rollover="true" max_value="$max" min_value="$min" />
 		</button>
 		<label 
 			width="37px"
 			height="37px" 
-			bind_text="player_count"
+			bind_text="$subject"
+			style_text_align="center"
+			style_pad_ver="8"
 		>
-			<remove_style selector="cursor" />
+			<style name="style_text" />
 		</label>
 		<button tag="  -" width="37px" height="37px">
-			<subject_increment_event step="-1" subject="player_count" rollover="true" max_value="8" min_value="2" />
+			<subject_increment_event step="-1" subject="$subject" rollover="true" max_value="$max" min_value="$min" />
 		</button>
 	</view>
 </component>
