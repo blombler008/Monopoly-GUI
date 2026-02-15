@@ -1,1 +1,24 @@
+<component>
+	<previews>
+		<!-- To see the panel on both with light and dark theme -->
+		<preview style_bg_color="0x888" />
+	</previews>
 
+	<view height="content" width="content" flex_flow="row" style_margin_all="0" style_pad_all="0">
+		<style name="style_text_dark" />
+
+		<button tag=" +" width="37px" height="37px">
+			<subject_increment_event step="1" subject="player_count" rollover="true" max_value="8" min_value="2" />
+		</button>
+		<label 
+			width="37px"
+			height="37px" 
+			bind_text="player_count"
+		>
+			<remove_style selector="cursor" />
+		</label>
+		<button tag="  -" width="37px" height="37px">
+			<subject_increment_event step="-1" subject="player_count" rollover="true" max_value="8" min_value="2" />
+		</button>
+	</view>
+</component>
