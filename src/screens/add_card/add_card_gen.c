@@ -54,8 +54,8 @@ lv_obj_t * add_card_create(void)
     lv_label_set_translation_tag(lv_label_0, "searching_card");
     lv_obj_add_style(lv_label_0, &style_text, 0);
     
-    lv_obj_t * spinner_0 = spinner_create(content_0);
-    lv_obj_set_height(spinner_0, 100);
+    lv_obj_t * div_0 = div_create(content_0);
+    lv_obj_set_height(div_0, 100);
     
     lv_obj_t * button_0 = button_create(content_0, "cancel", 2);
     lv_obj_add_screen_load_event(button_0, LV_EVENT_CLICKED, settings, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);

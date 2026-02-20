@@ -55,6 +55,16 @@ lv_obj_t * gameSettingsCard_create(lv_obj_t * parent)
     lv_obj_t * row_0 = row_create(card_0);
     lv_obj_t * label_0 = label_create(row_0, " ");
     lv_label_set_translation_tag(label_0, "game_settings");
+    
+    lv_obj_t * row_1 = row_create(card_0);
+    lv_obj_set_width(row_1, lv_pct(100));
+    lv_obj_set_style_layout(row_1, LV_LAYOUT_NONE, 0);
+    lv_obj_t * label_1 = label_create(row_1, " ");
+    lv_label_set_translation_tag(label_1, "player_count");
+    lv_obj_set_align(label_1, LV_ALIGN_LEFT_MID);
+    
+    lv_obj_t * spin_label_0 = spin_label_create(row_1, &player_count, 8, 2);
+    lv_obj_set_align(spin_label_0, LV_ALIGN_RIGHT_MID);
 
     LV_TRACE_OBJ_CREATE("finished");
 

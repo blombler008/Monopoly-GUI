@@ -65,6 +65,7 @@ const void * nfc;
  *----------------*/
 
 lv_style_t style_text;
+lv_style_t style_text_dark;
 
 /*----------------
  * Subjects
@@ -133,6 +134,10 @@ void Monopoly_init_gen(const char * asset_path)
         lv_style_init(&style_text);
         lv_style_set_text_color(&style_text, TEXT_COLOR);
         lv_style_set_text_font(&style_text, Roboto_16);
+
+        lv_style_init(&style_text_dark);
+        lv_style_set_text_color(&style_text_dark, TEXT_COLOR_DARK);
+        lv_style_set_text_font(&style_text_dark, Roboto_16);
 
         style_inited = true;
     }

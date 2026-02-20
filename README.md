@@ -26,11 +26,13 @@ The Monopoly GUI library provides a complete, production-ready user interface fo
 ## Requirements
 
 ### Hardware
+
 - **Microcontroller**: ESP32 (with minimum 320KB RAM for GUI rendering)
 - **Display**: 320x240 RGB565 LCD display (8-bit parallel, SPI, or I2C interface)
 - **Memory**: Minimum 4MB flash recommended for assets and fonts
 
 ### Software Dependencies
+
 - **LVGL**: Light and Versatile Graphics Library (v9.4 **REQUIRED** - NOT compatible with v9.5 or v9.2 and below)
 - **Arduino ESP32 Core**: For ESP32 board support
 - **CMake**: For GUI build system (3.13 or higher)
@@ -41,12 +43,13 @@ The Monopoly GUI library provides a complete, production-ready user interface fo
 ### Method 1: PlatformIO (Recommended)
 
 1. Add to your `platformio.ini`:
+
 ```ini
 lib_deps =
     https://github.com/blombler008/Monopoly_GUI
 ```
 
-2. The library will be automatically downloaded and linked during compilation.
+1. The library will be automatically downloaded and linked during compilation.
 
 ### Method 2: Arduino IDE
 
@@ -70,8 +73,8 @@ git clone https://github.com/blombler008/Monopoly_GUI.git
 However, if you need to regenerate GUI code (e.g., after editing with LVGL SquareLine Studio), follow **Stage 1** first.
 
 ### Stage 1: GUI Code Generation (CMake) - *Optional/Advanced*
-**Only needed if regenerating GUI code from XML definitions**
 
+**Only needed if regenerating GUI code from XML definitions**
 The GUI code generation uses **CMake** to generate C and H source files from LVGL XML definitions:
 
 ```bash
@@ -81,6 +84,7 @@ cmake --build build
 ```
 
 CMake generates:
+
 - `Monopoly_gen.c` and `Monopoly_gen.h` - Generated LVGL component code
 - Component-specific generated files (`*_gen.c`, `*_gen.h`) - Individual screen and component code
 - Embedded assets (fonts, images) - Pre-compiled into binary format
@@ -89,8 +93,8 @@ CMake generates:
 **Note**: This code generation step is only needed when you modify the GUI using LVGL SquareLine Studio and want to regenerate the source code.
 
 ### Stage 2: Project Compilation (PlatformIO) - *Standard Workflow*
-**This is the typical build process for end users**
 
+**This is the typical build process for end users**
 Compile your project with PlatformIO using the pre-generated GUI code:
 
 ```bash
@@ -98,12 +102,14 @@ platformio run --target upload --environment release
 ```
 
 PlatformIO automatically:
+
 - Compiles the pre-generated GUI C code
 - Compiles your main application code
 - Links all dependencies
 - Manages the ESP32 build configuration
 
 This is the standard workflow:
+
 - Pre-compiled GUI code is already in the repository
 - PlatformIO handles all compilation and linking
 - Fast and straightforward builds
@@ -141,13 +147,14 @@ void loop() {
 ### Display Configuration
 
 The library is optimized for:
+
 - **Resolution**: 320x240 pixels
 - **Color Format**: RGB565 (16-bit)
 - **Refresh Rate**: 30-60 Hz recommended
 
 ## Project Structure
 
-```
+```txt
 Monopoly_GUI/
 ├── src/
 │   ├── Monopoly.h                 # Main library header
@@ -207,6 +214,7 @@ Monopoly_GUI/
 The library provides configurable global settings for styling and game parameters:
 
 **Spacing Units**:
+
 ```xml
 <int name="unit_sm" value="6" />    <!-- 6px -->
 <int name="unit_md" value="12" />   <!-- 12px -->
@@ -215,6 +223,7 @@ The library provides configurable global settings for styling and game parameter
 ```
 
 **Color Scheme** (Dark/Light theme support):
+
 ```xml
 <!-- Primary surface -->
 <color name="surface_primary_dark" value="0xffffff" />
@@ -230,6 +239,7 @@ The library provides configurable global settings for styling and game parameter
 ```
 
 **Game Parameters** (Subject bindings):
+
 ```xml
 <int name="start_cash" min_value="0" max_value="500000" value="1500" />
 <int name="player_count" min_value="0" max_value="8" value="0" />
@@ -242,11 +252,13 @@ The library provides configurable global settings for styling and game parameter
 ## Screens
 
 ### 1. Welcome Screen (`screens/welcome/`)
+
 - **Purpose**: Splash screen and game overview
 - **Resolution**: 320x240
 - **Usage**: Initial app launch screen
 
 ### 2. Game Start Screen (`screens/game_start/`)
+
 - **Purpose**: Main game action interface with interactive tiles
 - **Features**: Tile-based action buttons for:
   - Transactions (player-to-player money transfers)
@@ -256,6 +268,7 @@ The library provides configurable global settings for styling and game parameter
 - **Note**: All game settings are configured in the **Settings Menu** before starting a game. Version 2.0 will include in-game setting adjustments.
 
 ### 3. Settings Screen (`screens/settings/`)
+
 - **Purpose**: Pre-game configuration and player setup (before game start)
 - **Contains**:
   - Player Settings Card (names, colors, tokens)
@@ -265,16 +278,19 @@ The library provides configurable global settings for styling and game parameter
 - **When Used**: All game parameters must be configured here before starting a game
 
 ### 4. Add Card Screen (`screens/add_card/`)
+
 - **Purpose**: RFID card registration and player association
 - **Integration**: Works with RFID module for player identification
 - **Usage**: Associates player profiles with RFID cards for authentication
 
 ### 5. About Screen (`screens/about/`)
+
 - **Purpose**: Application information and credits
 
 ## Game Workflow
 
 **Pre-Game Setup** → Game Start
+
 1. User opens the app to Welcome Screen
 2. Navigates to Settings Screen to configure:
    - Player names, colors, and tokens
@@ -285,12 +301,14 @@ The library provides configurable global settings for styling and game parameter
 4. Returns to Welcome Screen and starts game
 
 **During Game** → Game Start Screen
+
 - Interactive tiles display available game actions
 - Players can execute transactions, navigate board, manage properties
 - Limited settings adjustments available (version 2.0 feature)
 - All gameplay actions managed through the tile-based interface
 
 **Future** → Version 2.0
+
 - In-game setting adjustments will be added alongside the action tiles
 
 ## Components
@@ -342,6 +360,7 @@ These components provide an intuitive way for players to adjust game parameters 
 ## Recent Changes (v1.0.0)
 
 ### Latest Commits: Input Control Enhancements & Player Count Integration
+
 - **Date**: February 15, 2026
 - **Recent Changes**:
   - Added **player count row** to game settings card for easy player configuration
@@ -353,6 +372,7 @@ These components provide an intuitive way for players to adjust game parameters 
   - Enhanced dynamic properties system for improved component flexibility
 
 ### Previous Milestone: Build System Refactor
+
 - **Date**: February 13, 2026
 - **Changes**:
   - Converted CMakeLists.txt to generated file format
@@ -364,6 +384,7 @@ These components provide an intuitive way for players to adjust game parameters 
   - Updated CMake configuration for improved build flexibility
 
 ### Build System Improvements
+
 - **Relative Path Support**: Components now use relative paths to `Monopoly.h`
 - **Editor Integration**: Full compatibility with LVGL SquareLine Studio editor
 - **Flexible Include System**: Supports both library and project-level builds
@@ -419,6 +440,7 @@ For most users working with standard gameplay, GUI extensions are not necessary.
 **Only if you need to customize CMAKE code generation:**
 
 The GUI's CMake configuration is defined in `src/CMakeLists.txt`. This file controls how CMake generates the C and H code files. Edit it to:
+
 - Configure LVGL settings used during code generation
 - Add custom include directories for GUI code generation
 - Link additional LVGL modules or plugins
@@ -426,6 +448,7 @@ The GUI's CMake configuration is defined in `src/CMakeLists.txt`. This file cont
 - Customize the LVGL Editor preview build
 
 After modifying CMakeLists.txt, regenerate the GUI code:
+
 ```bash
 cd src
 cmake -B build --fresh
@@ -470,6 +493,7 @@ This library is designed to integrate with the main Monopoly game application:
 - **LVGL v9.4**: ✅ Supported - Use this version only
 
 If you encounter compilation errors or runtime issues, verify your LVGL version:
+
 ```cpp
 // Check LVGL version
 #include "lvgl.h"
@@ -477,6 +501,7 @@ If you encounter compilation errors or runtime issues, verify your LVGL version:
 ```
 
 In PlatformIO, specify the exact version in `platformio.ini`:
+
 ```ini
 lib_deps =
     lvgl/lvgl@9.4.0
@@ -486,6 +511,7 @@ lib_deps =
 ### Build Issues
 
 **GUI Code Generation (CMake)**:
+
 - **`Cannot find LVGL`**: Ensure LVGL v9.4 is installed and CMake can find it
 - **CMake errors**: Run `cmake -B build --fresh` to regenerate from scratch
 - **Generated C/H files missing**: Run `cmake --build build` to generate `*_gen.c` and `*_gen.h` files from XML definitions
@@ -493,6 +519,7 @@ lib_deps =
 - **Build directory issues**: Clear with `rm -rf src/build` (or `rmdir /s src\build` on Windows) and retry
 
 **Project Compilation (PlatformIO)**:
+
 - **`Cannot find Monopoly.h` or `Monopoly_gen.h`**: Ensure CMake code generation completed first; check that generated files exist in `src/`
 - **LVGL version errors**: Verify LVGL v9.4 is specified in platformio.ini
 - **Link errors**: Confirm all CMake-generated C/H files are present in `src/`

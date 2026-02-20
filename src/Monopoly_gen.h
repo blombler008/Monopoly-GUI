@@ -41,6 +41,8 @@ extern "C" {
 
 #define TEXT_COLOR lv_color_hex(0xdddddd)
 
+#define TEXT_COLOR_DARK lv_color_hex(0x0e0e0e)
+
 #define LIGHT lv_color_hex(0xffffff)
 
 #define DARK lv_color_hex(0x0e0e0e)
@@ -102,6 +104,7 @@ extern lv_obj_t * welcome;
  *----------------*/
 
 extern lv_style_t style_text;
+extern lv_style_t style_text_dark;
 
 /*----------------
  * Fonts
@@ -170,7 +173,8 @@ void Monopoly_init_gen(const char * asset_path);
 #include "components/basic/header/header_gen.h"
 #include "components/basic/label/label_gen.h"
 #include "components/basic/row/row_gen.h"
-#include "components/basic/spinner/spinner_gen.h"
+#include "components/basic/spin_box/spin_box_gen.h"
+#include "components/basic/spin_label/spin_label_gen.h"
 #include "components/basic/timehead/timehead_gen.h"
 #include "components/cards/audioSettingsCard/audioSettingsCard_gen.h"
 #include "components/cards/connectionSettingsCard/connectionSettingsCard_gen.h"
