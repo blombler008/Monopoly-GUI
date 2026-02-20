@@ -8,7 +8,7 @@
 			<lv_label translation_tag="searching_card">
 				<style name="style_text" />
 			</lv_label>
-			<spinner height="100px" />
+			<div height="100px" />
 			<button tag="cancel" button_type="2">
 				<screen_load_event screen="settings" trigger="clicked" />
 			</button>
