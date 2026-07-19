@@ -31,6 +31,34 @@
  * Translations
  *----------------*/
 
+#ifndef LV_EDITOR_PREVIEW
+    static const char * translation_languages[] = {"en", "de", NULL};
+    static const char * translation_tags[] = {"back", "about", "settings", "cancel", "add_card", "searching_card", "player_settings", "audio_settings", "game_settings", "connection_settings", "text_welcome", "text_welcome_info", "game_start", "players", "start_cash", "gameinfo_display", "player_count", " ", " +", "  -", "title", NULL};
+    static const char * translation_texts[] = {
+        "back", "zurück", /* back */
+        "About", "Über", /* about */
+        "Settings", "Einstellungen", /* settings */
+        "Cancel", "Abbrechen", /* cancel */
+        "Add Player", "Spieler Hinzufügen", /* add_card */
+        "Searching for card...", "Karte wird gesucht...", /* searching_card */
+        "Player Settings", "Spieler Einstellungen", /* player_settings */
+        "Audio Settings", "Audio Einstellungen", /* audio_settings */
+        "Game Settings", "Spiel Einstellungen", /* game_settings */
+        "Connectivity", "Konnektivität", /* connection_settings */
+        "Monopoly Banking", "Monopoly Banking", /* text_welcome */
+        "Based on the Monopoly: The Mega Edition", "Basierend auf Monopoly: Die Mega Edition", /* text_welcome_info */
+        "Start Game", "Spiel Starten", /* game_start */
+        "Players: ", "Spieler: ", /* players */
+        "Starting Cash: ", "Start Geld: ", /* start_cash */
+        "Game Information", "Spiel Information", /* gameinfo_display */
+        "Player Count", "Spieler Anzahl", /* player_count */
+        NULL, NULL, /*   */
+        " +", " +", /*  + */
+        "  -", "  -", /*   - */
+        "Monopoly", "Monopoly", /* title */
+    };
+#endif
+
 /**********************
  *  GLOBAL VARIABLES
  **********************/
@@ -82,6 +110,7 @@ lv_subject_t time_hours;
 lv_subject_t button_sec;
 lv_subject_t button_pri;
 lv_subject_t button_invis;
+lv_subject_t language1;
 
 /**********************
  *      MACROS
@@ -172,10 +201,22 @@ void Monopoly_init_gen(const char * asset_path)
     lv_subject_init_int(&button_sec, 0);
     lv_subject_init_int(&button_pri, 1);
     lv_subject_init_int(&button_invis, 2);
+    static char language1_buf[UI_SUBJECT_STRING_LENGTH];
+    static char language1_prev_buf[UI_SUBJECT_STRING_LENGTH];
+    lv_subject_init_string(&language1,
+                           language1_buf,
+                           language1_prev_buf,
+                           UI_SUBJECT_STRING_LENGTH,
+                           "en"
+                          );
 
     /*----------------
      * Translations
      *----------------*/
+
+    #ifndef LV_EDITOR_PREVIEW
+        lv_translation_add_static(translation_languages, translation_tags, translation_texts);
+    #endif
 
 #if LV_USE_XML
     /* Register widgets */
@@ -198,6 +239,7 @@ void Monopoly_init_gen(const char * asset_path)
     lv_xml_register_subject(NULL, "button_sec", &button_sec);
     lv_xml_register_subject(NULL, "button_pri", &button_pri);
     lv_xml_register_subject(NULL, "button_invis", &button_invis);
+    lv_xml_register_subject(NULL, "language1", &language1);
 
     /* Register callbacks */
 #endif

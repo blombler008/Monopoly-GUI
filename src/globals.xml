@@ -58,6 +58,7 @@
 		<int name="button_sec" value="0" />
 		<int name="button_pri" value="1" />
 		<int name="button_invis" value="2" />
+		<int name="language" value="0" max_value="1" min_value="0" />
 	</subjects>
 
 	<images>

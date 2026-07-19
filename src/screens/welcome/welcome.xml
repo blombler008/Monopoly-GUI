@@ -33,6 +33,16 @@
 						<style name="style_text" />
 					</lv_label>
 				</row>
+				<row width="100%">
+					<lv_button>
+						<lv_label text="EN" />
+						<subject_set_int_event subject="language" trigger="clicked" value="0" />
+					</lv_button>
+					<lv_button>
+						<lv_label text="DE" />
+						<subject_set_int_event subject="language" trigger="clicked" value="1" />
+					</lv_button>
+				</row>
 			</card>
 		</content>
 	</view>

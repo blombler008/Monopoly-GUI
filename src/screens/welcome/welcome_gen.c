@@ -93,6 +93,20 @@ lv_obj_t * welcome_create(void)
     lv_label_bind_text(lv_label_0, &start_cash, "M %d");
     lv_obj_set_align(lv_label_0, LV_ALIGN_RIGHT_MID);
     lv_obj_add_style(lv_label_0, &style_text, 0);
+    
+    lv_obj_t * row_3 = row_create(card_1);
+    lv_obj_set_width(row_3, lv_pct(100));
+    lv_obj_t * lv_button_0 = lv_button_create(row_3);
+    lv_obj_t * lv_label_1 = lv_label_create(lv_button_0);
+    lv_label_set_text(lv_label_1, "EN");
+    
+    lv_obj_add_subject_set_string_event(lv_button_0, &language, LV_EVENT_CLICKED, "en");
+    
+    lv_obj_t * lv_button_1 = lv_button_create(row_3);
+    lv_obj_t * lv_label_2 = lv_label_create(lv_button_1);
+    lv_label_set_text(lv_label_2, "DE");
+    
+    lv_obj_add_subject_set_string_event(lv_button_1, &language, LV_EVENT_CLICKED, "de");
 
     LV_TRACE_OBJ_CREATE("finished");
 
