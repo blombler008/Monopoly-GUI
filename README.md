@@ -8,7 +8,7 @@ A comprehensive graphical user interface library for the Monopoly board game run
 
 ## Overview
 
-The Monopoly GUI library provides a complete, production-ready user interface for a Monopoly game application. It features an intuitive design system built with LVGL, pre-designed screens for game flow, customizable components for game settings, and support for a 320x240 RGB565 display.
+The Monopoly GUI library provides a complete, production-ready user interface for a Monopoly game application. It features an intuitive design system built with LVGL, pre-designed screens for game[...]
 
 ## Features
 
@@ -70,7 +70,7 @@ git clone https://github.com/blombler008/Monopoly_GUI.git
 
 ⚠️ **The Monopoly GUI is typically pre-compiled** with all C/H code already generated. In most cases, you only need to use **PlatformIO** to compile your project. Follow **Stage 2** below.
 
-However, if you need to regenerate GUI code (e.g., after editing with LVGL SquareLine Studio), follow **Stage 1** first.
+However, if you need to regenerate GUI code (e.g., after editing with LVGL Pro Editor), follow **Stage 1** first.
 
 ### Stage 1: GUI Code Generation (CMake) - *Optional/Advanced*
 
@@ -88,9 +88,9 @@ CMake generates:
 - `Monopoly_gen.c` and `Monopoly_gen.h` - Generated LVGL component code
 - Component-specific generated files (`*_gen.c`, `*_gen.h`) - Individual screen and component code
 - Embedded assets (fonts, images) - Pre-compiled into binary format
-- Build artifacts for LVGL SquareLine Studio preview
+- Build artifacts for LVGL Pro Editor preview
 
-**Note**: This code generation step is only needed when you modify the GUI using LVGL SquareLine Studio and want to regenerate the source code.
+**Note**: This code generation step is only needed when you modify the GUI using LVGL Pro Editor and want to regenerate the source code.
 
 ### Stage 2: Project Compilation (PlatformIO) - *Standard Workflow*
 
@@ -376,7 +376,7 @@ These components provide an intuitive way for players to adjust game parameters 
 - **Date**: February 13, 2026
 - **Changes**:
   - Converted CMakeLists.txt to generated file format
-  - Adapted build system for LVGL Editor preview compatibility
+  - Adapted build system for LVGL Pro Editor preview compatibility
   - Introduced `LIB_NAME` and `LV_EDITOR_COMPONENT_LIB_LIST` variables
   - Updated component includes to use relative paths
   - Refreshed embedded font binaries
@@ -386,22 +386,30 @@ These components provide an intuitive way for players to adjust game parameters 
 ### Build System Improvements
 
 - **Relative Path Support**: Components now use relative paths to `Monopoly.h`
-- **Editor Integration**: Full compatibility with LVGL SquareLine Studio editor
+- **Editor Integration**: Full compatibility with LVGL Pro Editor
 - **Flexible Include System**: Supports both library and project-level builds
 - **Artifact Management**: Automated cleanup of preview artifacts
 - **Input Control Integration**: Spin controls integrated into game settings for dynamic player configuration
 
 ## Development & Customization
 
-### Editing with LVGL SquareLine Studio (Advanced)
+### Live Preview
+
+Want to see the GUI in action? Check out the interactive preview:
+
+**[🎨 View GUI in LVGL Viewer](https://viewer.lvgl.io/?repo=https://github.com/blombler008/Monopoly-GUI/tree/main/src)**
+
+This viewer allows you to explore the project structure, components, and layouts without needing to compile the code.
+
+### Editing with LVGL Pro Editor (Advanced)
 
 **Only if you need to modify the GUI design:**
 
-The library is fully compatible with LVGL SquareLine Studio (formerly LVGL Editor):
+The library is fully compatible with LVGL Pro Editor:
 
-1. Open `src/project.xml` in SquareLine Studio
+1. Open `src/project.xml` in LVGL Pro Editor
 2. Edit screens and components visually
-3. Export/generate the project (Studio creates/updates XML files in `src/`)
+3. Export/generate the project (Editor creates/updates XML files in `src/`)
 4. **Generate GUI code with CMake**: `cd src && cmake -B build && cmake --build build`
 5. CMake generates all `.c` and `.h` files from the XML definitions
 6. Commit the generated C/H files (`*_gen.c`, `*_gen.h`)
@@ -416,17 +424,17 @@ Edit the XML files instead, then regenerate the C/H code with CMake.
 
 1. **Add New Screen**:
    - Create directory: `src/screens/your_screen/`
-   - Add XML definition in SquareLine Studio or manually create XML
+   - Add XML definition in LVGL Pro Editor or manually create XML
    - Reference in `src/project.xml`
    - Regenerate C/H code: `cd src && cmake -B build && cmake --build build`
 
 2. **Add Custom Component**:
    - Create directory: `src/components/[basic|cards]/your_component/`
-   - Define XML component file in SquareLine Studio
+   - Define XML component file in LVGL Pro Editor
    - Implement custom callbacks in generated C files if needed
    - Regenerate: `cd src && cmake -B build && cmake --build build`
 
-3. **Modify Coors/Styles**:l
+3. **Modify Colors/Styles**:
    - Edit `src/globals.xml`
    - Update color values in the `<consts>` section
    - Regenerate C/H code with CMake to apply changes
@@ -445,7 +453,7 @@ The GUI's CMake configuration is defined in `src/CMakeLists.txt`. This file cont
 - Add custom include directories for GUI code generation
 - Link additional LVGL modules or plugins
 - Define GUI-specific build flags
-- Customize the LVGL Editor preview build
+- Customize the LVGL Pro Editor preview build
 
 After modifying CMakeLists.txt, regenerate the GUI code:
 
@@ -578,7 +586,7 @@ Copyright © 2025 blombler008
 ## References
 
 - [LVGL Documentation](https://docs.lvgl.io/)
-- [LVGL SquareLine Studio](https://www.lvgl.io/tools/squareline-studio)
+- [LVGL Pro Editor](https://www.lvgl.io/tools/pro-editor)
 - [Arduino ESP32 Core](https://github.com/espressif/arduino-esp32)
 - [Monopoly Project Repository](https://github.com/blombler008/Monopoly_GUI)
 
