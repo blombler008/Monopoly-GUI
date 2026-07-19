@@ -586,7 +586,7 @@ Copyright © 2025 blombler008
 ## References
 
 - [LVGL Documentation](https://docs.lvgl.io/)
-- [LVGL Pro Editor](https://www.lvgl.io/tools/pro-editor)
+- [LVGL Pro Editor](https://lvgl.io/pro)
 - [Arduino ESP32 Core](https://github.com/espressif/arduino-esp32)
 - [Monopoly Project Repository](https://github.com/blombler008/Monopoly_GUI)
 
