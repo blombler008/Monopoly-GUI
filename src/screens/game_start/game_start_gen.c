@@ -45,6 +45,7 @@ lv_obj_t * game_start_create(void)
     if (game_start == NULL) game_start = lv_obj_create(NULL);
     lv_obj_t * lv_obj_0 = game_start;
     lv_obj_set_name_static(lv_obj_0, "game_start_#");
+    lv_obj_set_style_bg_color(lv_obj_0, BG_PRIMARY_DARK, 0);
 
     LV_TRACE_OBJ_CREATE("finished");
 

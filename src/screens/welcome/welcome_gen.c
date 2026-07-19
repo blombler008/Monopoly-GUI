@@ -46,7 +46,7 @@ lv_obj_t * welcome_create(void)
     lv_obj_t * lv_obj_0 = welcome;
     lv_obj_set_name_static(lv_obj_0, "welcome_#");
 
-    lv_obj_t * header_0 = header_create(lv_obj_0, "Monopoly");
+    header_create(lv_obj_0, "title");
     
     lv_obj_t * content_0 = content_create(lv_obj_0);
     lv_obj_t * card_0 = card_create(content_0);
@@ -87,7 +87,7 @@ lv_obj_t * welcome_create(void)
     lv_obj_t * row_2 = row_create(card_1);
     lv_obj_set_width(row_2, lv_pct(100));
     lv_obj_set_style_layout(row_2, LV_LAYOUT_NONE, 0);
-    lv_obj_t * label_5 = label_create(row_2, "start_cash");
+    label_create(row_2, "start_cash");
     
     lv_obj_t * lv_label_0 = lv_label_create(row_2);
     lv_label_bind_text(lv_label_0, &start_cash, "M %d");

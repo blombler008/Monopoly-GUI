@@ -1,7 +1,6 @@
 <screen permanent="true">
-	<styles />
 	<view>
-		<header title="Monopoly" />
+		<header title="title" />
 		<content>
 			<card>
 				<label

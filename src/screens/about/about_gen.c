@@ -45,7 +45,7 @@ lv_obj_t * about_create(void)
     lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
     lv_obj_set_name_static(lv_obj_0, "about_#");
 
-    lv_obj_t * header_0 = header_create(lv_obj_0, "about");
+    header_create(lv_obj_0, "about");
     
     lv_obj_t * content_0 = content_create(lv_obj_0);
     lv_obj_t * lv_qrcode_0 = lv_qrcode_create(content_0);

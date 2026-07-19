@@ -101,16 +101,16 @@ void Monopoly_init_gen(const char * asset_path)
      *----------------*/
 
     /* create bin font 'Roboto_16' from file */
-    lv_snprintf(buf, 256, "%s%s", asset_path, "/fonts/Roboto_16");
+    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Roboto_16.bin");
     Roboto_16 = lv_binfont_create(buf);
     /* create bin font 'Roboto_24' from file */
-    lv_snprintf(buf, 256, "%s%s", asset_path, "/fonts/Roboto_24");
+    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Roboto_24.bin");
     Roboto_24 = lv_binfont_create(buf);
     /* create bin font 'RobotoB_16' from file */
-    lv_snprintf(buf, 256, "%s%s", asset_path, "/fonts/RobotoB_16");
+    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/RobotoB_16.bin");
     RobotoB_16 = lv_binfont_create(buf);
     /* create bin font 'RobotoB_24' from file */
-    lv_snprintf(buf, 256, "%s%s", asset_path, "/fonts/RobotoB_24");
+    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/RobotoB_24.bin");
     RobotoB_24 = lv_binfont_create(buf);
 
 

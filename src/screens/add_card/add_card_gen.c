@@ -47,7 +47,7 @@ lv_obj_t * add_card_create(void)
     lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
     lv_obj_set_name_static(lv_obj_0, "add_card_#");
 
-    lv_obj_t * header_0 = header_create(lv_obj_0, "add_card");
+    header_create(lv_obj_0, "add_card");
     
     lv_obj_t * content_0 = content_create(lv_obj_0);
     lv_obj_t * lv_label_0 = lv_label_create(content_0);

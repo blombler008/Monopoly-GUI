@@ -73,7 +73,7 @@ lv_obj_t * button_create(lv_obj_t * parent, const char * tag, int32_t button_typ
     lv_obj_t * lv_button_0 = lv_button_create(parent);
     lv_obj_set_name_static(lv_button_0, "button_#");
 
-    lv_obj_t * label_0 = label_create(lv_button_0, tag);
+    label_create(lv_button_0, tag);
     
     lv_obj_add_style(lv_button_0, &style_button_activ, LV_STATE_PRESSED);
     lv_obj_add_style(lv_button_0, &style_button, 0);

@@ -46,16 +46,16 @@ lv_obj_t * settings_create(void)
     lv_obj_t * lv_obj_0 = settings;
     lv_obj_set_name_static(lv_obj_0, "settings_#");
 
-    lv_obj_t * header_0 = header_create(lv_obj_0, "settings");
+    header_create(lv_obj_0, "settings");
     
     lv_obj_t * content_0 = content_create(lv_obj_0);
-    lv_obj_t * playerSettingsCard_0 = playerSettingsCard_create(content_0);
+    playerSettingsCard_create(content_0);
     
-    lv_obj_t * connectionSettingsCard_0 = connectionSettingsCard_create(content_0);
+    connectionSettingsCard_create(content_0);
     
-    lv_obj_t * gameSettingsCard_0 = gameSettingsCard_create(content_0);
+    gameSettingsCard_create(content_0);
     
-    lv_obj_t * audioSettingsCard_0 = audioSettingsCard_create(content_0);
+    audioSettingsCard_create(content_0);
     
     lv_obj_t * row_0 = row_create(content_0);
     lv_obj_set_style_pad_column(row_0, UNIT_XL, 0);

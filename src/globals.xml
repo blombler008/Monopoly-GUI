@@ -74,7 +74,7 @@
 	<fonts>
 		<!-- Add <bin> , <tiny_ttf>, <freetype> tags here -->
 		<bin
-			src_path="/fonts/Roboto-Regular.ttf"
+			src_path="fonts/Roboto-Regular.ttf"
 			name="Roboto_16"
 			range="0x20-0x7F"
 			symbols="äöüÄÖÜß"
@@ -84,7 +84,7 @@
 		/>
 
 		<bin
-			src_path="/fonts/Roboto-Regular.ttf"
+			src_path="fonts/Roboto-Regular.ttf"
 			name="Roboto_24"
 			range="0x20-0x7F"
 			symbols="äöüÄÖÜß"
@@ -94,7 +94,7 @@
 		/>
 
 		<bin
-			src_path="/fonts/Roboto-Bold.ttf"
+			src_path="fonts/Roboto-Bold.ttf"
 			name="RobotoB_16"
 			range="0x20-0x7F"
 			symbols="äöüÄÖÜß"
@@ -103,7 +103,7 @@
 			bpp="4"
 		/>
 		<bin
-			src_path="/fonts/Roboto-Bold.ttf"
+			src_path="fonts/Roboto-Bold.ttf"
 			name="RobotoB_24"
 			range="0x20-0x7F"
 			symbols="äöüÄÖÜß"

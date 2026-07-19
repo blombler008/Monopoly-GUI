@@ -1,6 +1,6 @@
 <component>
 	<previews>
-		<preview style_bg_color="0x888" />
+		<preview style_bg_color="0x888" language="de" />
 	</previews>
 	<api>
 		<prop name="tag" default=" " type="string" />

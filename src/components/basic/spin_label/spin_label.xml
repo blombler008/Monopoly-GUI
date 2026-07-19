@@ -1,18 +1,19 @@
 <component>
 	<previews>
 		<!-- To see the panel on both with light and dark theme -->
-		<preview style_bg_color="0x888" />
+		<preview style_bg_color="0x888" language="de" />
 	</previews>
 
 	<styles>
-		<style name="pg" 
-			bg_color="#bg_tertiary_dark" 
-			layout="flex" 
-			bg_opa="255"  
-			height="content" 
-			width="content" 
-			flex_flow="row" 
-			margin_all="8" 
+		<style
+			name="pg"
+			bg_color="#bg_tertiary_dark"
+			layout="flex"
+			bg_opa="255"
+			height="content"
+			width="content"
+			flex_flow="row"
+			margin_all="8"
 			pad_all="8"
 			radius="5"
 		/>
@@ -25,20 +26,13 @@
 	</api>
 
 	<view>
-		<remove_style_all  />
+		<remove_style_all />
 		<style name="pg" />
-
 
 		<button tag=" +" width="37px" height="37px">
 			<subject_increment_event step="1" subject="$subject" rollover="true" max_value="$max" min_value="$min" />
 		</button>
-		<label 
-			width="37px"
-			height="37px" 
-			bind_text="$subject"
-			style_text_align="center"
-			style_pad_ver="8"
-		>
+		<label width="37px" height="37px" bind_text="$subject" style_text_align="center" style_pad_ver="8">
 			<style name="style_text" />
 		</label>
 		<button tag="  -" width="37px" height="37px">

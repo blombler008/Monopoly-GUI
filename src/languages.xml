@@ -19,4 +19,11 @@
 	<translation tag="players" en="Players: " de="Spieler: " />
 	<translation tag="start_cash" en="Starting Cash: " de="Start Geld: " />
 	<translation tag="gameinfo_display" en="Game Information" de="Spiel Information" />
+
+	<translation tag="player_count" en="Player Count" de="Spieler Anzahl" />
+
+	<translation tag=" " de="" en="" />
+	<translation tag=" +" en=" +" de=" +" />
+	<translation tag="  -" en="  -" de="  -" />
+	<translation tag="title" en="Monopoly" de="Monopoly" />
 </translations>

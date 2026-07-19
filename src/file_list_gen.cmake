@@ -1,3 +1,4 @@
+set(LV_EDITOR_PROJECT_SOURCES)
 list(
   APPEND
   LV_EDITOR_PROJECT_SOURCES
@@ -9,7 +10,8 @@ list(
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/header/header_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/label/label_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/row/row_gen.c
-  ${CMAKE_CURRENT_LIST_DIR}/components/basic/spinner/spinner_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/basic/spin_box/spin_box_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/basic/spin_label/spin_label_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/timehead/timehead_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/audioSettingsCard/audioSettingsCard_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/connectionSettingsCard/connectionSettingsCard_gen.c
