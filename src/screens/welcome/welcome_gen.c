@@ -100,13 +100,13 @@ lv_obj_t * welcome_create(void)
     lv_obj_t * lv_label_1 = lv_label_create(lv_button_0);
     lv_label_set_text(lv_label_1, "EN");
     
-    lv_obj_add_subject_set_string_event(lv_button_0, &language, LV_EVENT_CLICKED, "en");
+    lv_obj_add_subject_set_int_event(lv_button_0, &language, LV_EVENT_CLICKED, 0);
     
     lv_obj_t * lv_button_1 = lv_button_create(row_3);
     lv_obj_t * lv_label_2 = lv_label_create(lv_button_1);
     lv_label_set_text(lv_label_2, "DE");
     
-    lv_obj_add_subject_set_string_event(lv_button_1, &language, LV_EVENT_CLICKED, "de");
+    lv_obj_add_subject_set_int_event(lv_button_1, &language, LV_EVENT_CLICKED, 1);
 
     LV_TRACE_OBJ_CREATE("finished");
 

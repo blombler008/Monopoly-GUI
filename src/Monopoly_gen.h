@@ -143,7 +143,7 @@ extern lv_subject_t time_hours;
 extern lv_subject_t button_sec;
 extern lv_subject_t button_pri;
 extern lv_subject_t button_invis;
-extern lv_subject_t language1;
+extern lv_subject_t language;
 
 /**********************
  * GLOBAL PROTOTYPES

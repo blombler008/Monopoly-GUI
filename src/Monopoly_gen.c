@@ -110,7 +110,7 @@ lv_subject_t time_hours;
 lv_subject_t button_sec;
 lv_subject_t button_pri;
 lv_subject_t button_invis;
-lv_subject_t language1;
+lv_subject_t language;
 
 /**********************
  *      MACROS
@@ -201,14 +201,9 @@ void Monopoly_init_gen(const char * asset_path)
     lv_subject_init_int(&button_sec, 0);
     lv_subject_init_int(&button_pri, 1);
     lv_subject_init_int(&button_invis, 2);
-    static char language1_buf[UI_SUBJECT_STRING_LENGTH];
-    static char language1_prev_buf[UI_SUBJECT_STRING_LENGTH];
-    lv_subject_init_string(&language1,
-                           language1_buf,
-                           language1_prev_buf,
-                           UI_SUBJECT_STRING_LENGTH,
-                           "en"
-                          );
+    lv_subject_init_int(&language, 0);
+    lv_subject_set_min_value_int(&language, 0);
+    lv_subject_set_max_value_int(&language, 1);
 
     /*----------------
      * Translations
@@ -239,7 +234,7 @@ void Monopoly_init_gen(const char * asset_path)
     lv_xml_register_subject(NULL, "button_sec", &button_sec);
     lv_xml_register_subject(NULL, "button_pri", &button_pri);
     lv_xml_register_subject(NULL, "button_invis", &button_invis);
-    lv_xml_register_subject(NULL, "language1", &language1);
+    lv_xml_register_subject(NULL, "language", &language);
 
     /* Register callbacks */
 #endif
