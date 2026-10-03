@@ -2,10 +2,12 @@
 	<view>
 		<header title="settings" />
 		<content>
+			<generalSettingsCard />
 			<playerSettingsCard />
 			<connectionSettingsCard />
 			<gameSettingsCard />
 			<audioSettingsCard />
+
 			<row style_pad_column="#unit_xl">
 				<button tag="back" button_type="2">
 					<screen_load_event screen="welcome" trigger="clicked" />

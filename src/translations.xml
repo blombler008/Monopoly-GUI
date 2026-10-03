@@ -26,4 +26,6 @@
 	<translation tag=" +" en=" +" de=" +" />
 	<translation tag="  -" en="  -" de="  -" />
 	<translation tag="title" en="Monopoly" de="Monopoly" />
+	<translation tag="language" en="Language: " de="Sprache: " />
+	<translation tag="general_settings" en="Gerneral: " de="Allgemein: " />
 </translations>

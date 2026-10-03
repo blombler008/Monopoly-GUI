@@ -1,0 +1,37 @@
+<component>
+	<previews>
+		<!-- To see the panel on both with light and dark theme -->
+		<preview style_bg_color="0x888" language="de" />
+	</previews>
+	<styles>
+		<style name="style_main" width="content" height="content" />
+	</styles>
+	<view>
+		<remove_style />
+		<style name="style_main" />
+		<card>
+			<row>
+				<label translation_tag="general_settings" />
+			</row>
+			<row width="100%" style_layout="none">
+				<label translation_tag="language" align="left_mid" />
+				<div
+					width="100px"
+					align="right_mid"
+					style_layout="flex"
+					flex_flow="row"
+					style_flex_main_place="space_between"
+					style_pad_hor="8px"
+				>
+					<button button_type="1" tag="EN">
+						<subject_set_int_event subject="language" trigger="clicked" value="0" />
+					</button>
+
+					<button button_type="1" tag="DE">
+						<subject_set_int_event subject="language" trigger="clicked" value="1" />
+					</button>
+				</div>
+			</row>
+		</card>
+	</view>
+</component>
