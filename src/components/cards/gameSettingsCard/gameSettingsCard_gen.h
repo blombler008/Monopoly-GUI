@@ -2,8 +2,8 @@
  * @file gameSettingsCard_gen.h
  */
 
-#ifndef GAMESETTINGSCARD_H
-#define GAMESETTINGSCARD_H
+#ifndef LVGL_PRO_GAMESETTINGSCARD_GEN_H
+#define LVGL_PRO_GAMESETTINGSCARD_GEN_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -43,4 +43,4 @@ lv_obj_t * gameSettingsCard_create(lv_obj_t * parent);
 } /*extern "C"*/
 #endif
 
-#endif /*GAMESETTINGSCARD_H*/
+#endif /*LVGL_PRO_GAMESETTINGSCARD_GEN_H*/

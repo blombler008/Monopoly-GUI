@@ -2,8 +2,8 @@
  * @file add_card_gen.h
  */
 
-#ifndef ADD_CARD_H
-#define ADD_CARD_H
+#ifndef LVGL_PRO_ADD_CARD_GEN_H
+#define LVGL_PRO_ADD_CARD_GEN_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -45,4 +45,4 @@ lv_obj_t * add_card_create(void);
 } /*extern "C"*/
 #endif
 
-#endif /*ADD_CARD_H*/
+#endif /*LVGL_PRO_ADD_CARD_GEN_H*/

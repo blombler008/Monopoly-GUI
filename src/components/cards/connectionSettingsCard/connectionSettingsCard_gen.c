@@ -39,47 +39,58 @@ lv_obj_t * connectionSettingsCard_create(lv_obj_t * parent)
     static bool style_inited = false;
 
     if (!style_inited) {
+        /*Init all styles*/
         lv_style_init(&style_main);
+
         lv_style_set_width(&style_main, LV_SIZE_CONTENT);
         lv_style_set_height(&style_main, LV_SIZE_CONTENT);
 
         style_inited = true;
     }
 
-    lv_obj_t * lv_obj_0 = lv_obj_create(parent);
-    lv_obj_set_name_static(lv_obj_0, "connectionSettingsCard_#");
 
-    lv_obj_remove_style(lv_obj_0, NULL, 0);
-    lv_obj_add_style(lv_obj_0, &style_main, 0);
-    lv_obj_t * card_0 = card_create(lv_obj_0);
-    lv_obj_t * row_0 = row_create(card_0);
-    lv_obj_t * label_0 = label_create(row_0, " ");
-    lv_label_set_translation_tag(label_0, "connection_settings");
-    
-    lv_obj_t * row_1 = row_create(card_0);
-    lv_obj_set_width(row_1, lv_pct(100));
-    lv_obj_set_style_flex_main_place(row_1, LV_FLEX_ALIGN_START, 0);
-    lv_obj_t * lv_checkbox_0 = lv_checkbox_create(row_1);
-    lv_checkbox_set_text(lv_checkbox_0, "Bluetooth");
-    lv_obj_bind_checked(lv_checkbox_0, &bluetooth_on);
-    
-    lv_obj_t * row_2 = row_create(card_0);
-    lv_obj_set_width(row_2, lv_pct(100));
-    lv_obj_set_style_flex_main_place(row_2, LV_FLEX_ALIGN_START, 0);
-    lv_obj_t * lv_checkbox_1 = lv_checkbox_create(row_2);
-    lv_checkbox_set_text(lv_checkbox_1, "NFC");
-    lv_obj_bind_checked(lv_checkbox_1, &nfc_on);
-    
-    lv_obj_t * row_3 = row_create(card_0);
-    lv_obj_set_width(row_3, lv_pct(100));
-    lv_obj_set_style_flex_main_place(row_3, LV_FLEX_ALIGN_START, 0);
-    lv_obj_t * lv_checkbox_2 = lv_checkbox_create(row_3);
-    lv_checkbox_set_text(lv_checkbox_2, "WiFi");
-    lv_obj_bind_checked(lv_checkbox_2, &wifi_on);
+    lv_obj_t * the_root = NULL;
+
+    #if MONOPOLY_CHECK_COMPILE_TARGET(MONOPOLY_TARGET_ALL)
+    if (Monopoly_check_target(MONOPOLY_TARGET_ALL)) {
+        lv_obj_t * lv_obj_0 = lv_obj_create(parent);
+        lv_obj_set_name_static(lv_obj_0, "connectionSettingsCard_#");
+
+        lv_obj_remove_style(lv_obj_0, NULL, 0);
+        lv_obj_add_style(lv_obj_0, &style_main, 0);
+        lv_obj_t * card_0 = card_create(lv_obj_0);
+        lv_obj_t * row_0 = row_create(card_0);
+        lv_obj_t * label_0 = label_create(row_0, " ");
+        lv_label_set_translation_tag(label_0, "connection_settings");
+
+        lv_obj_t * row_1 = row_create(card_0);
+        lv_obj_set_width(row_1, lv_pct(100));
+        lv_obj_set_style_flex_main_place(row_1, LV_FLEX_ALIGN_START, 0);
+        lv_obj_t * lv_checkbox_0 = lv_checkbox_create(row_1);
+        lv_checkbox_set_text(lv_checkbox_0, "Bluetooth");
+        lv_obj_bind_checked(lv_checkbox_0, &bluetooth_on);
+
+        lv_obj_t * row_2 = row_create(card_0);
+        lv_obj_set_width(row_2, lv_pct(100));
+        lv_obj_set_style_flex_main_place(row_2, LV_FLEX_ALIGN_START, 0);
+        lv_obj_t * lv_checkbox_1 = lv_checkbox_create(row_2);
+        lv_checkbox_set_text(lv_checkbox_1, "NFC");
+        lv_obj_bind_checked(lv_checkbox_1, &nfc_on);
+
+        lv_obj_t * row_3 = row_create(card_0);
+        lv_obj_set_width(row_3, lv_pct(100));
+        lv_obj_set_style_flex_main_place(row_3, LV_FLEX_ALIGN_START, 0);
+        lv_obj_t * lv_checkbox_2 = lv_checkbox_create(row_3);
+        lv_checkbox_set_text(lv_checkbox_2, "WiFi");
+        lv_obj_bind_checked(lv_checkbox_2, &wifi_on);
+
+        the_root = lv_obj_0;
+    }
+    #endif
 
     LV_TRACE_OBJ_CREATE("finished");
 
-    return lv_obj_0;
+    return the_root;
 }
 
 /**********************

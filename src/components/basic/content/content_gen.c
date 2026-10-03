@@ -39,7 +39,9 @@ lv_obj_t * content_create(lv_obj_t * parent)
     static bool style_inited = false;
 
     if (!style_inited) {
+        /*Init all styles*/
         lv_style_init(&style_content);
+
         lv_style_set_bg_color(&style_content, lv_color_hex(0x131313));
         lv_style_set_bg_grad_dir(&style_content, LV_GRAD_DIR_VER);
         lv_style_set_bg_grad_color(&style_content, lv_color_hex(0x191919));
@@ -58,16 +60,25 @@ lv_obj_t * content_create(lv_obj_t * parent)
         style_inited = true;
     }
 
-    lv_obj_t * content = lv_obj_create(parent);
-    lv_obj_set_name_static(content, "content_#");
-    lv_obj_set_name(content, "content");
-    lv_obj_set_scrollbar_mode(content, LV_SCROLLBAR_MODE_ACTIVE);
 
-    lv_obj_add_style(content, &style_content, 0);
+    lv_obj_t * the_root = NULL;
+
+    #if MONOPOLY_CHECK_COMPILE_TARGET(MONOPOLY_TARGET_ALL)
+    if (Monopoly_check_target(MONOPOLY_TARGET_ALL)) {
+        lv_obj_t * content = lv_obj_create(parent);
+        lv_obj_set_name_static(content, "content_#");
+        lv_obj_set_name(content, "content");
+        lv_obj_set_scrollbar_mode(content, LV_SCROLLBAR_MODE_ACTIVE);
+
+        lv_obj_add_style(content, &style_content, 0);
+
+        the_root = content;
+    }
+    #endif
 
     LV_TRACE_OBJ_CREATE("finished");
 
-    return content;
+    return the_root;
 }
 
 /**********************

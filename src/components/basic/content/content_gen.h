@@ -2,8 +2,8 @@
  * @file content_gen.h
  */
 
-#ifndef CONTENT_H
-#define CONTENT_H
+#ifndef LVGL_PRO_CONTENT_GEN_H
+#define LVGL_PRO_CONTENT_GEN_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -43,4 +43,4 @@ lv_obj_t * content_create(lv_obj_t * parent);
 } /*extern "C"*/
 #endif
 
-#endif /*CONTENT_H*/
+#endif /*LVGL_PRO_CONTENT_GEN_H*/

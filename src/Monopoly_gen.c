@@ -8,7 +8,7 @@
 
 #include "Monopoly_gen.h"
 
-#if LV_USE_XML
+#if defined(LV_USE_XML) && LV_USE_XML
 #endif /* LV_USE_XML */
 
 /*********************
@@ -23,9 +23,13 @@
  *  STATIC PROTOTYPES
  **********************/
 
+static void check_font(lv_font_t ** font, const char * name);
+
 /**********************
  *  STATIC VARIABLES
  **********************/
+
+static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
 
 /*----------------
  * Translations
@@ -84,9 +88,10 @@ lv_font_t * RobotoB_24;
  * Images
  *----------------*/
 
-const void * bluetooth;
-const void * wifi;
-const void * nfc;
+/* Targets: any */
+const void * bluetooth = NULL;
+const void * wifi = NULL;
+const void * nfc = NULL;
 
 /*----------------
  * Global styles
@@ -129,29 +134,65 @@ void Monopoly_init_gen(const char * asset_path)
      * Fonts
      *----------------*/
 
-    /* create bin font 'Roboto_16' from file */
-    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Roboto_16.bin");
-    Roboto_16 = lv_binfont_create(buf);
-    /* create bin font 'Roboto_24' from file */
-    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Roboto_24.bin");
-    Roboto_24 = lv_binfont_create(buf);
-    /* create bin font 'RobotoB_16' from file */
-    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/RobotoB_16.bin");
-    RobotoB_16 = lv_binfont_create(buf);
-    /* create bin font 'RobotoB_24' from file */
-    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/RobotoB_24.bin");
-    RobotoB_24 = lv_binfont_create(buf);
+    /* Targets: any */
 
+    #if MONOPOLY_CHECK_COMPILE_TARGET(MONOPOLY_TARGET_ALL)
+    if (Monopoly_check_target(MONOPOLY_TARGET_ALL)) {
+        if (!Roboto_16) {
+            /* Roboto_16 */
+            /* create bin font 'Roboto_16' from file */
+            lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Roboto_16.bin");
+            Roboto_16 = lv_binfont_create(buf);
+
+        }
+        if (!Roboto_24) {
+            /* Roboto_24 */
+            /* create bin font 'Roboto_24' from file */
+            lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Roboto_24.bin");
+            Roboto_24 = lv_binfont_create(buf);
+
+        }
+        if (!RobotoB_16) {
+            /* RobotoB_16 */
+            /* create bin font 'RobotoB_16' from file */
+            lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/RobotoB_16.bin");
+            RobotoB_16 = lv_binfont_create(buf);
+
+        }
+        if (!RobotoB_24) {
+            /* RobotoB_24 */
+            /* create bin font 'RobotoB_24' from file */
+            lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/RobotoB_24.bin");
+            RobotoB_24 = lv_binfont_create(buf);
+
+        }
+    }
+    #endif
 
     /*----------------
      * Images
      *----------------*/
-    lv_snprintf(buf, 256, "%s%s", asset_path, "/images/bluetooth_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
-    bluetooth = lv_strdup(buf);
-    lv_snprintf(buf, 256, "%s%s", asset_path, "/images/wifi_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
-    wifi = lv_strdup(buf);
-    lv_snprintf(buf, 256, "%s%s", asset_path, "/images/contactless_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
-    nfc = lv_strdup(buf);
+
+    /* Targets: any */
+    #if MONOPOLY_CHECK_COMPILE_TARGET(MONOPOLY_TARGET_ALL)
+    if (Monopoly_check_target(MONOPOLY_TARGET_ALL)) {
+        /* bluetooth */
+        if (!bluetooth) {
+            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/bluetooth_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
+            bluetooth = lv_strdup(buf);
+        }
+        /* wifi */
+        if (!wifi) {
+            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/wifi_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
+            wifi = lv_strdup(buf);
+        }
+        /* nfc */
+        if (!nfc) {
+            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/contactless_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
+            nfc = lv_strdup(buf);
+        }
+    }
+    #endif
 
     /*----------------
      * Global styles
@@ -160,11 +201,12 @@ void Monopoly_init_gen(const char * asset_path)
     static bool style_inited = false;
 
     if (!style_inited) {
+        /*Init all styles*/
         lv_style_init(&style_text);
+        lv_style_init(&style_text_dark);
+
         lv_style_set_text_color(&style_text, TEXT_COLOR);
         lv_style_set_text_font(&style_text, Roboto_16);
-
-        lv_style_init(&style_text_dark);
         lv_style_set_text_color(&style_text_dark, TEXT_COLOR_DARK);
         lv_style_set_text_font(&style_text_dark, Roboto_16);
 
@@ -211,10 +253,18 @@ void Monopoly_init_gen(const char * asset_path)
 
     #ifndef LV_EDITOR_PREVIEW
         lv_translation_add_static(translation_languages, translation_tags, translation_texts);
+        lv_translation_set_language(translation_languages[0]);
     #endif
 
-#if LV_USE_XML
+#if defined(LV_USE_XML) && LV_USE_XML
     /* Register widgets */
+
+    /* Check all fonts / default if needed. This prevents fonts that are used in one target but
+       defined in another from causing assertion failures during rendering of the Preview. */
+    check_font(&Roboto_16, "Roboto_16");
+    check_font(&Roboto_24, "Roboto_24");
+    check_font(&RobotoB_16, "RobotoB_16");
+    check_font(&RobotoB_24, "RobotoB_24");
 
     /* Register fonts */
     lv_xml_register_font(NULL, "Roboto_16", Roboto_16);
@@ -241,28 +291,38 @@ void Monopoly_init_gen(const char * asset_path)
 
     /* Register all the global assets so that they won't be created again when globals.xml is parsed.
      * While running in the editor skip this step to update the preview when the XML changes */
-#if LV_USE_XML && !defined(LV_EDITOR_PREVIEW)
+#if defined(LV_USE_XML) && LV_USE_XML && !defined(LV_EDITOR_PREVIEW)
     /* Register images */
     lv_xml_register_image(NULL, "bluetooth", bluetooth);
     lv_xml_register_image(NULL, "wifi", wifi);
     lv_xml_register_image(NULL, "nfc", nfc);
 #endif
 
-#if LV_USE_XML == 0
+#if !defined(LV_USE_XML) || LV_USE_XML == 0
     /*--------------------
      *  Permanent screens
      *-------------------*/
     /* If XML is enabled it's assumed that the permanent screens are created
-     * manaully from XML using lv_xml_create() */
-    /* To allow screens to reference each other, create them all before calling the sceen create functions */
-    game_start = lv_obj_create(NULL);
-    settings = lv_obj_create(NULL);
-    welcome = lv_obj_create(NULL);
-
+     * manually from XML using lv_xml_create() */
     game_start_create();
     settings_create();
     welcome_create();
 #endif
+}
+
+void Monopoly_set_target(uint32_t target)
+{
+    Monopoly_target = target;
+}
+
+uint32_t Monopoly_get_target(void)
+{
+    return Monopoly_target;
+}
+
+bool Monopoly_check_target(uint32_t target)
+{
+    return (Monopoly_target & target) ? true : false;
 }
 
 /* Callbacks */
@@ -270,3 +330,11 @@ void Monopoly_init_gen(const char * asset_path)
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+
+static void check_font(lv_font_t ** font, const char * name)
+{
+    if (!(*font)) {
+        *font = (lv_font_t *)LV_FONT_DEFAULT;
+        LV_LOG_WARN("font `%s` was not set. Using `LV_FONT_DEFAULT` instead", name);
+    }
+}

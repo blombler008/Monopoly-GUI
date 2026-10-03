@@ -2,8 +2,8 @@
  * @file timehead_gen.h
  */
 
-#ifndef TIMEHEAD_H
-#define TIMEHEAD_H
+#ifndef LVGL_PRO_TIMEHEAD_GEN_H
+#define LVGL_PRO_TIMEHEAD_GEN_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -43,4 +43,4 @@ lv_obj_t * timehead_create(lv_obj_t * parent);
 } /*extern "C"*/
 #endif
 
-#endif /*TIMEHEAD_H*/
+#endif /*LVGL_PRO_TIMEHEAD_GEN_H*/

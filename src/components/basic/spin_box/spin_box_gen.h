@@ -2,8 +2,8 @@
  * @file spin_box_gen.h
  */
 
-#ifndef SPIN_BOX_H
-#define SPIN_BOX_H
+#ifndef LVGL_PRO_SPIN_BOX_GEN_H
+#define LVGL_PRO_SPIN_BOX_GEN_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -43,4 +43,4 @@ lv_obj_t * spin_box_create(lv_obj_t * parent, lv_subject_t * subject, int32_t ma
 } /*extern "C"*/
 #endif
 
-#endif /*SPIN_BOX_H*/
+#endif /*LVGL_PRO_SPIN_BOX_GEN_H*/

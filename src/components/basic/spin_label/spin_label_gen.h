@@ -2,8 +2,8 @@
  * @file spin_label_gen.h
  */
 
-#ifndef SPIN_LABEL_H
-#define SPIN_LABEL_H
+#ifndef LVGL_PRO_SPIN_LABEL_GEN_H
+#define LVGL_PRO_SPIN_LABEL_GEN_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -43,4 +43,4 @@ lv_obj_t * spin_label_create(lv_obj_t * parent, lv_subject_t * subject, int32_t 
 } /*extern "C"*/
 #endif
 
-#endif /*SPIN_LABEL_H*/
+#endif /*LVGL_PRO_SPIN_LABEL_GEN_H*/

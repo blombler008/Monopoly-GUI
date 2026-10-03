@@ -2,8 +2,8 @@
  * @file about_gen.h
  */
 
-#ifndef ABOUT_H
-#define ABOUT_H
+#ifndef LVGL_PRO_ABOUT_GEN_H
+#define LVGL_PRO_ABOUT_GEN_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -45,4 +45,4 @@ lv_obj_t * about_create(void);
 } /*extern "C"*/
 #endif
 
-#endif /*ABOUT_H*/
+#endif /*LVGL_PRO_ABOUT_GEN_H*/

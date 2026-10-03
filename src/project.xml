@@ -1,7 +1,10 @@
-<project name="Monopoly" lvgl_version="9.4.0">
+<project name="Monopoly" lvgl_version="9.4.0" git_url="https://github.com/blombler008/Monopoly-GUI/" theme="default">
 	<targets>
 		<target name="welcome">
 			<display width="320" height="240" color_format="rgb565" />
+			<memory name="int_ram" size="32KB" />
+			<memory name="int_flash" size="1MB" bandwidth="100MB/s" />
+			<memory name="ext_flash" size="1GB" bandwidth="2MB/s" />
 		</target>
 	</targets>
 </project>

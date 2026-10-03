@@ -39,30 +39,39 @@ lv_obj_t * add_card_create(void)
     static bool style_inited = false;
 
     if (!style_inited) {
+        /*Init all styles*/
         lv_style_init(&sometho);
-
         style_inited = true;
     }
 
-    lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
-    lv_obj_set_name_static(lv_obj_0, "add_card_#");
 
-    header_create(lv_obj_0, "add_card");
-    
-    lv_obj_t * content_0 = content_create(lv_obj_0);
-    lv_obj_t * lv_label_0 = lv_label_create(content_0);
-    lv_label_set_translation_tag(lv_label_0, "searching_card");
-    lv_obj_add_style(lv_label_0, &style_text, 0);
-    
-    lv_obj_t * div_0 = div_create(content_0);
-    lv_obj_set_height(div_0, 100);
-    
-    lv_obj_t * button_0 = button_create(content_0, "cancel", 2);
-    lv_obj_add_screen_load_event(button_0, LV_EVENT_CLICKED, settings, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);
+    lv_obj_t * the_root = NULL;
+
+    #if MONOPOLY_CHECK_COMPILE_TARGET(MONOPOLY_TARGET_ALL)
+    if (Monopoly_check_target(MONOPOLY_TARGET_ALL)) {
+        lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
+        lv_obj_set_name_static(lv_obj_0, "add_card_#");
+
+        header_create(lv_obj_0, "add_card");
+
+        lv_obj_t * content_0 = content_create(lv_obj_0);
+        lv_obj_t * lv_label_0 = lv_label_create(content_0);
+        lv_label_set_translation_tag(lv_label_0, "searching_card");
+        lv_obj_add_style(lv_label_0, &style_text, 0);
+
+        lv_obj_t * div_0 = div_create(content_0);
+        lv_obj_set_height(div_0, 100);
+
+        lv_obj_t * button_0 = button_create(content_0, "cancel", 2);
+        lv_obj_add_screen_load_event(button_0, LV_EVENT_CLICKED, settings, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);
+
+        the_root = lv_obj_0;
+    }
+    #endif
 
     LV_TRACE_OBJ_CREATE("finished");
 
-    return lv_obj_0;
+    return the_root;
 }
 
 /**********************
