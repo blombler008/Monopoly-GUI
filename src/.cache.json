@@ -1,9 +1,10 @@
 {
-  "font:Roboto_16": "7d746a37d08b5c42-c294d3317a93ce2a",
-  "font:Roboto_24": "7d746a37d08b5c42-960718e74b26d0d3",
-  "font:RobotoB_16": "a914bc5015a34694-4da4e11b2184cdb5",
-  "font:RobotoB_24": "a914bc5015a34694-31966383fe1ebbc2",
+  "font:Roboto_16": "7d746a37d08b5c42-cea47947f933d72e",
+  "font:Roboto_24": "7d746a37d08b5c42-cfff008f6fbaebad",
+  "font:RobotoB_16": "a914bc5015a34694-e662b3626e098cdb",
+  "font:RobotoB_24": "a914bc5015a34694-b0c8dfdd15758536",
   "image:bluetooth": "2da837dbaf0df192-c86b925a47c0ed9b",
   "image:wifi": "0223be8b1d92c19d-de6379d7901bbe97",
-  "image:nfc": "eab4b2e00a00e989-56d00d58c5f06741"
+  "image:nfc": "eab4b2e00a00e989-56d00d58c5f06741",
+  "image:back_arrow": "d5386e84bf2d2067-bf8d815df1aafb7f"
 }

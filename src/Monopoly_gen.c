@@ -37,7 +37,7 @@ static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
 
 #ifndef LV_EDITOR_PREVIEW
     static const char * translation_languages[] = {"en", "de", NULL};
-    static const char * translation_tags[] = {"back", "about", "settings", "cancel", "add_card", "searching_card", "player_settings", "audio_settings", "game_settings", "connection_settings", "text_welcome", "text_welcome_info", "game_start", "players", "start_cash", "gameinfo_display", "player_count", " ", " +", "  -", "title", NULL};
+    static const char * translation_tags[] = {"back", "about", "settings", "cancel", "add_card", "searching_card", "player_settings", "audio_settings", "game_settings", "connection_settings", "text_welcome", "text_welcome_info", "game_start", "players", "start_cash", "gameinfo_display", "player_count", " ", "DE", "EN", " +", "  -", "title", "language", "general_settings", "back_ico", NULL};
     static const char * translation_texts[] = {
         "back", "zurück", /* back */
         "About", "Über", /* about */
@@ -57,9 +57,14 @@ static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
         "Game Information", "Spiel Information", /* gameinfo_display */
         "Player Count", "Spieler Anzahl", /* player_count */
         NULL, NULL, /*   */
+        "DE", "DE", /* DE */
+        "EN", "EN", /* EN */
         " +", " +", /*  + */
         "  -", "  -", /*   - */
         "Monopoly", "Monopoly", /* title */
+        "Language: ", "Sprache: ", /* language */
+        "Gerneral: ", "Allgemein: ", /* general_settings */
+        "←", "←", /* back_ico */
     };
 #endif
 
@@ -92,6 +97,7 @@ lv_font_t * RobotoB_24;
 const void * bluetooth = NULL;
 const void * wifi = NULL;
 const void * nfc = NULL;
+const void * back_arrow = NULL;
 
 /*----------------
  * Global styles
@@ -190,6 +196,11 @@ void Monopoly_init_gen(const char * asset_path)
         if (!nfc) {
             lv_snprintf(buf, 256, "%s%s", asset_path, "/images/contactless_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
             nfc = lv_strdup(buf);
+        }
+        /* back_arrow */
+        if (!back_arrow) {
+            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/arrow_back_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
+            back_arrow = lv_strdup(buf);
         }
     }
     #endif
@@ -296,6 +307,7 @@ void Monopoly_init_gen(const char * asset_path)
     lv_xml_register_image(NULL, "bluetooth", bluetooth);
     lv_xml_register_image(NULL, "wifi", wifi);
     lv_xml_register_image(NULL, "nfc", nfc);
+    lv_xml_register_image(NULL, "back_arrow", back_arrow);
 #endif
 
 #if !defined(LV_USE_XML) || LV_USE_XML == 0

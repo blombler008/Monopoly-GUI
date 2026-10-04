@@ -60,13 +60,13 @@ lv_obj_t * gameSettingsCard_create(lv_obj_t * parent)
         lv_obj_add_style(lv_obj_0, &style_main, 0);
         lv_obj_t * card_0 = card_create(lv_obj_0);
         lv_obj_t * row_0 = row_create(card_0);
-        lv_obj_t * label_0 = label_create(row_0, " ");
+        lv_obj_t * label_0 = label_create(row_0, "");
         lv_label_set_translation_tag(label_0, "game_settings");
 
         lv_obj_t * row_1 = row_create(card_0);
         lv_obj_set_width(row_1, lv_pct(100));
         lv_obj_set_style_layout(row_1, LV_LAYOUT_NONE, 0);
-        lv_obj_t * label_1 = label_create(row_1, " ");
+        lv_obj_t * label_1 = label_create(row_1, "");
         lv_label_set_translation_tag(label_1, "player_count");
         lv_obj_set_align(label_1, LV_ALIGN_LEFT_MID);
 

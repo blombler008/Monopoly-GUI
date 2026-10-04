@@ -1,0 +1,41 @@
+<component>
+	<previews>
+		<preview style_bg_color="0x888" language="de" />
+	</previews>
+
+	<api>
+		<prop name="tag" type="string" default=" " />
+		<prop name="button_type" type="int" default="0" />
+	</api>
+
+	<styles>
+		<style name="style_button_invisible" bg_color="0x131313" border_side="none" bg_opa="0" />
+		<style name="style_button_pri" bg_color="0x0a64a8" border_side="none" bg_opa="255" />
+
+		<!-- Rund, Icon zentriert -->
+		<style
+			name="style_button"
+			bg_color="0x131313"
+			border_side="full"
+			border_width="1"
+			border_color="0x020202"
+			shadow_width="0"
+			bg_opa="255"
+			height="40px"
+			width="40px"
+			radius="50%"
+			pad_all="0px"
+		/>
+		<style name="style_button_activ" bg_opa="127" />
+	</styles>
+
+	<view extends="lv_button" floating="true" align="bottom_right" x="-8px" y="-8px">
+		<!-- Bild statt Text -->
+		<lv_image name="image" src="back_arrow" align="center" width="20px" height="20px" />
+
+		<style name="style_button_activ" selector="pressed" />
+		<style name="style_button" />
+		<bind_style name="style_button_pri" subject="button_pri" ref_value="$button_type" />
+		<bind_style name="style_button_invisible" subject="button_invis" ref_value="$button_type" />
+	</view>
+</component>

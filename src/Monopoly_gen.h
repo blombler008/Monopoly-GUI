@@ -123,6 +123,7 @@ extern lv_font_t * RobotoB_24;
 extern const void * bluetooth;
 extern const void * wifi;
 extern const void * nfc;
+extern const void * back_arrow;
 
 /*----------------
  * Subjects
@@ -165,6 +166,7 @@ void Monopoly_init_gen(const char * asset_path);
 
 /*Include all the widgets, components and screens of this library*/
 #include "components/basic/button/button_gen.h"
+#include "components/basic/button/floating_back_button_gen.h"
 #include "components/basic/card/card_gen.h"
 #include "components/basic/column/column_gen.h"
 #include "components/basic/content/content_gen.h"
@@ -178,6 +180,7 @@ void Monopoly_init_gen(const char * asset_path);
 #include "components/cards/audioSettingsCard/audioSettingsCard_gen.h"
 #include "components/cards/connectionSettingsCard/connectionSettingsCard_gen.h"
 #include "components/cards/gameSettingsCard/gameSettingsCard_gen.h"
+#include "components/cards/generalSettingsCard/generalSettingsCard_gen.h"
 #include "components/cards/playerSettingsCard/playerSettingsCard_gen.h"
 #include "screens/about/about_gen.h"
 #include "screens/add_card/add_card_gen.h"

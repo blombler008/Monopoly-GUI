@@ -2,6 +2,7 @@ list(
   APPEND
   LV_EDITOR_PROJECT_SOURCES
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/button/button_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/basic/button/floating_back_button_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/card/card_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/column/column_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/content/content_gen.c
@@ -15,6 +16,7 @@ list(
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/audioSettingsCard/audioSettingsCard_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/connectionSettingsCard/connectionSettingsCard_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/gameSettingsCard/gameSettingsCard_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/cards/generalSettingsCard/generalSettingsCard_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/playerSettingsCard/playerSettingsCard_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/Monopoly_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/Monopoly.c

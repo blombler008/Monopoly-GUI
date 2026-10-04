@@ -1,3 +1,5 @@
 <screen permanent="true">
-	<view style_bg_color="#bg_primary_dark" />
+	<view style_bg_color="#bg_primary_dark">
+		<floating_back_button />
+	</view>
 </screen>

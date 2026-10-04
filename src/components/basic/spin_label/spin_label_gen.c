@@ -73,7 +73,7 @@ lv_obj_t * spin_label_create(lv_obj_t * parent, lv_subject_t * subject, int32_t 
         lv_obj_set_subject_increment_event_max_value(button_0, subject_increment_event_0, max);
         lv_obj_set_subject_increment_event_min_value(button_0, subject_increment_event_0, min);
 
-        lv_obj_t * label_0 = label_create(lv_obj_0, " ");
+        lv_obj_t * label_0 = label_create(lv_obj_0, "");
         lv_obj_set_width(label_0, 37);
         lv_obj_set_height(label_0, 37);
         lv_label_bind_text(label_0, subject, NULL);

@@ -98,7 +98,7 @@ lv_obj_t * header_create(lv_obj_t * parent, const char * title)
         lv_obj_t * timehead_0 = timehead_create(lv_obj_0);
         lv_obj_add_style(timehead_0, &style_header_clock, 0);
 
-        lv_obj_t * label_0 = label_create(lv_obj_0, " ");
+        lv_obj_t * label_0 = label_create(lv_obj_0, "");
         lv_label_set_translation_tag(label_0, title);
         lv_label_set_long_mode(label_0, LV_LABEL_LONG_MODE_DOTS);
         lv_obj_add_style(label_0, &style_header_title, 0);

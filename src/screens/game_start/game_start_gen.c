@@ -50,6 +50,8 @@ lv_obj_t * game_start_create(void)
         lv_obj_set_name_static(lv_obj_0, "game_start_#");
         lv_obj_set_style_bg_color(lv_obj_0, BG_PRIMARY_DARK, 0);
 
+        floating_back_button_create(lv_obj_0, " ", 0);
+
         the_root = lv_obj_0;
     }
     #endif

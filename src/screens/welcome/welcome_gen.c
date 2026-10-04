@@ -57,7 +57,7 @@ lv_obj_t * welcome_create(void)
         lv_obj_set_width(label_0, lv_pct(100));
         lv_obj_set_style_text_align(label_0, LV_TEXT_ALIGN_CENTER, 0);
         lv_obj_set_style_text_font(label_0, RobotoB_24, 0);
-        lv_obj_set_style_text_letter_space(label_0, 1, 0);
+        lv_obj_set_style_text_letter_space(label_0, 2, 0);
 
         lv_obj_t * label_1 = label_create(card_0, "text_welcome_info");
         lv_obj_set_width(label_1, lv_pct(100));
@@ -83,7 +83,7 @@ lv_obj_t * welcome_create(void)
         lv_obj_t * label_3 = label_create(row_1, "players");
         lv_obj_set_align(label_3, LV_ALIGN_LEFT_MID);
 
-        lv_obj_t * label_4 = label_create(row_1, " ");
+        lv_obj_t * label_4 = label_create(row_1, "");
         lv_label_bind_text(label_4, &player_count, NULL);
         lv_obj_set_align(label_4, LV_ALIGN_RIGHT_MID);
 
@@ -96,20 +96,6 @@ lv_obj_t * welcome_create(void)
         lv_label_bind_text(lv_label_0, &start_cash, "M %d");
         lv_obj_set_align(lv_label_0, LV_ALIGN_RIGHT_MID);
         lv_obj_add_style(lv_label_0, &style_text, 0);
-
-        lv_obj_t * row_3 = row_create(card_1);
-        lv_obj_set_width(row_3, lv_pct(100));
-        lv_obj_t * lv_button_0 = lv_button_create(row_3);
-        lv_obj_t * lv_label_1 = lv_label_create(lv_button_0);
-        lv_label_set_text(lv_label_1, "EN");
-
-        lv_obj_add_subject_set_int_event(lv_button_0, &language, LV_EVENT_CLICKED, 0);
-
-        lv_obj_t * lv_button_1 = lv_button_create(row_3);
-        lv_obj_t * lv_label_2 = lv_label_create(lv_button_1);
-        lv_label_set_text(lv_label_2, "DE");
-
-        lv_obj_add_subject_set_int_event(lv_button_1, &language, LV_EVENT_CLICKED, 1);
 
         the_root = lv_obj_0;
     }

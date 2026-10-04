@@ -8,7 +8,7 @@
 					width="100%"
 					style_text_align="center"
 					style_text_font="RobotoB_24"
-					style_text_letter_space="1"
+					style_text_letter_space="2"
 				/>
 				<label tag="text_welcome_info" width="100%" style_text_align="center" />
 			</card>
@@ -32,7 +32,7 @@
 					<lv_label bind_text="start_cash" bind_text-fmt="M %d" align="right_mid">
 						<style name="style_text" />
 					</lv_label>
-				</row> 
+				</row>
 			</card>
 		</content>
 	</view>

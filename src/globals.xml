@@ -62,7 +62,7 @@
 			src_path="fonts/Roboto-Regular.ttf"
 			name="Roboto_16"
 			range="0x20-0x7F"
-			symbols="äöüÄÖÜß"
+			symbols="äöüÄÖÜß←"
 			as_file="true"
 			size="16"
 			bpp="4"
@@ -72,7 +72,7 @@
 			src_path="fonts/Roboto-Regular.ttf"
 			name="Roboto_24"
 			range="0x20-0x7F"
-			symbols="äöüÄÖÜß"
+			symbols="äöüÄÖÜß←"
 			as_file="true"
 			size="24"
 			bpp="4"
@@ -82,7 +82,7 @@
 			src_path="fonts/Roboto-Bold.ttf"
 			name="RobotoB_16"
 			range="0x20-0x7F"
-			symbols="äöüÄÖÜß"
+			symbols="äöüÄÖÜß←"
 			as_file="true"
 			size="16"
 			bpp="4"
@@ -91,7 +91,7 @@
 			src_path="fonts/Roboto-Bold.ttf"
 			name="RobotoB_24"
 			range="0x20-0x7F"
-			symbols="äöüÄÖÜß"
+			symbols="äöüÄÖÜß←"
 			as_file="true"
 			size="24"
 			bpp="4"
@@ -107,6 +107,11 @@
 		/>
 		<file name="wifi" file_format="png" src_path="/images/wifi_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png" />
 		<file name="nfc" file_format="png" src_path="/images/contactless_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png" />
+		<file
+			name="back_arrow"
+			file_format="png"
+			src_path="/images/arrow_back_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png"
+		/>
 	</images>
 
 	<styles>

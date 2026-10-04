@@ -52,6 +52,8 @@ lv_obj_t * settings_create(void)
         header_create(lv_obj_0, "settings");
 
         lv_obj_t * content_0 = content_create(lv_obj_0);
+        generalSettingsCard_create(content_0);
+
         playerSettingsCard_create(content_0);
 
         connectionSettingsCard_create(content_0);

@@ -23,9 +23,12 @@
 	<translation tag="player_count" en="Player Count" de="Spieler Anzahl" />
 
 	<translation tag=" " de="" en="" char_count="0" />
+	<translation tag="DE" de="DE" en="DE" char_count="2" />
+	<translation tag="EN" de="EN" en="EN" char_count="2" />
 	<translation tag=" +" en=" +" de=" +" />
 	<translation tag="  -" en="  -" de="  -" />
 	<translation tag="title" en="Monopoly" de="Monopoly" />
 	<translation tag="language" en="Language: " de="Sprache: " />
 	<translation tag="general_settings" en="Gerneral: " de="Allgemein: " />
+	<translation tag="back_ico" en="←" de="←" />
 </translations>
