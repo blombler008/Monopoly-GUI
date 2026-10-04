@@ -33,7 +33,7 @@ extern "C" {
  * GLOBAL PROTOTYPES
  **********************/
 
-lv_obj_t * floating_back_button_create(lv_obj_t * parent, const char * tag, int32_t button_type);
+lv_obj_t * floating_back_button_create(lv_obj_t * parent);
 
 /**********************
  *      MACROS

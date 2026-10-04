@@ -18,7 +18,7 @@ extern "C" {
 /*********************
  *      DEFINES
  *********************/
-
+static void language_observer_cb(lv_observer_t * observer, lv_subject_t * subject); 
 /**********************
  *      TYPEDEFS
  **********************/

@@ -37,7 +37,7 @@ static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
 
 #ifndef LV_EDITOR_PREVIEW
     static const char * translation_languages[] = {"en", "de", NULL};
-    static const char * translation_tags[] = {"back", "about", "settings", "cancel", "add_card", "searching_card", "player_settings", "audio_settings", "game_settings", "connection_settings", "text_welcome", "text_welcome_info", "game_start", "players", "start_cash", "gameinfo_display", "player_count", " ", "DE", "EN", " +", "  -", "title", "language", "general_settings", "back_ico", NULL};
+    static const char * translation_tags[] = {"back", "about", "settings", "cancel", "add_card", "searching_card", "player_settings", "audio_settings", "game_settings", "connection_settings", "text_welcome", "text_welcome_info", "game_start", "players", "start_cash", "gameinfo_display", "player_count", " ", "DE", "EN", " +", "  -", "title", "language", "general_settings", NULL};
     static const char * translation_texts[] = {
         "back", "zurück", /* back */
         "About", "Über", /* about */
@@ -64,7 +64,6 @@ static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
         "Monopoly", "Monopoly", /* title */
         "Language: ", "Sprache: ", /* language */
         "Gerneral: ", "Allgemein: ", /* general_settings */
-        "←", "←", /* back_ico */
     };
 #endif
 

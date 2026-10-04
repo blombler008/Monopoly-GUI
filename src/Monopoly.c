@@ -11,7 +11,7 @@
 /*********************
  *      DEFINES
  *********************/
-static void language_observer_cb(lv_observer_t * observer, lv_subject_t * subject);
+
  
 /**********************
  *      TYPEDEFS
@@ -24,7 +24,7 @@ static void language_observer_cb(lv_observer_t * observer, lv_subject_t * subjec
 /**********************
  *  STATIC VARIABLES
  **********************/
-
+ 
 /**********************
  *      MACROS
  **********************/
@@ -42,6 +42,10 @@ void Monopoly_init(const char * asset_path)
 
     lv_subject_add_observer(&language, language_observer_cb, NULL);
 }
+ 
+/**********************
+ *   STATIC FUNCTIONS
+ **********************/
 
 static void language_observer_cb(lv_observer_t * observer, lv_subject_t * subject)
 {
@@ -60,6 +64,3 @@ static void language_observer_cb(lv_observer_t * observer, lv_subject_t * subjec
         break;
     }
 }
-/**********************
- *   STATIC FUNCTIONS
- **********************/
