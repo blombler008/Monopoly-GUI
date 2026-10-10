@@ -18,6 +18,7 @@ list(
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/gameSettingsCard/gameSettingsCard_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/generalSettingsCard/generalSettingsCard_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/playerSettingsCard/playerSettingsCard_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/complex/player_list_item/player_list_item_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/Monopoly_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/Monopoly.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/about/about_gen.c

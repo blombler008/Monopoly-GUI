@@ -37,7 +37,7 @@ static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
 
 #ifndef LV_EDITOR_PREVIEW
     static const char * translation_languages[] = {"en", "de", NULL};
-    static const char * translation_tags[] = {"back", "about", "settings", "cancel", "add_card", "searching_card", "player_settings", "audio_settings", "game_settings", "connection_settings", "text_welcome", "text_welcome_info", "game_start", "players", "start_cash", "gameinfo_display", "player_count", " ", "DE", "EN", " +", "  -", "title", "language", "general_settings", NULL};
+    static const char * translation_tags[] = {"back", "about", "settings", "cancel", "add_card", "searching_card", "player_settings", "audio_settings", "game_settings", "connection_settings", "text_welcome", "text_welcome_info", "game_start", "players", "start_cash", "gameinfo_display", "player_count", " ", "DE", "EN", " +", "  -", "title", "language", "general_settings", "game_stats", "balance", "deposit", "withdraw", "transfer", "banking", NULL};
     static const char * translation_texts[] = {
         "back", "zurück", /* back */
         "About", "Über", /* about */
@@ -64,6 +64,12 @@ static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
         "Monopoly", "Monopoly", /* title */
         "Language: ", "Sprache: ", /* language */
         "Gerneral: ", "Allgemein: ", /* general_settings */
+        "Game Stats", "Spielstatistik", /* game_stats */
+        "Balance", "Kontostand", /* balance */
+        "Deposit", "Einzahlen", /* deposit */
+        "Withdraw", "Auszahlen", /* withdraw */
+        "Transfer", "Überweisen", /* transfer */
+        "Banking", "Banking", /* banking */
     };
 #endif
 
@@ -97,6 +103,8 @@ const void * bluetooth = NULL;
 const void * wifi = NULL;
 const void * nfc = NULL;
 const void * back_arrow = NULL;
+const void * icon_settings = NULL;
+const void * icon_delete = NULL;
 
 /*----------------
  * Global styles
@@ -200,6 +208,16 @@ void Monopoly_init_gen(const char * asset_path)
         if (!back_arrow) {
             lv_snprintf(buf, 256, "%s%s", asset_path, "/images/arrow_back_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
             back_arrow = lv_strdup(buf);
+        }
+        /* icon_settings */
+        if (!icon_settings) {
+            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/settings_20dp_E3E3E3_FILL1_wght400_GRAD0_opsz20.png");
+            icon_settings = lv_strdup(buf);
+        }
+        /* icon_delete */
+        if (!icon_delete) {
+            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/delete_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
+            icon_delete = lv_strdup(buf);
         }
     }
     #endif
@@ -308,6 +326,8 @@ void Monopoly_init_gen(const char * asset_path)
     lv_xml_register_image(NULL, "wifi", wifi);
     lv_xml_register_image(NULL, "nfc", nfc);
     lv_xml_register_image(NULL, "back_arrow", back_arrow);
+    lv_xml_register_image(NULL, "icon_settings", icon_settings);
+    lv_xml_register_image(NULL, "icon_delete", icon_delete);
 #endif
 
 #if !defined(LV_USE_XML) || LV_USE_XML == 0

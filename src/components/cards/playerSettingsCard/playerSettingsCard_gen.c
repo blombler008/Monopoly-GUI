@@ -63,6 +63,8 @@ lv_obj_t * playerSettingsCard_create(lv_obj_t * parent)
         lv_obj_t * label_0 = label_create(row_0, "");
         lv_label_set_translation_tag(label_0, "player_settings");
 
+        player_list_item_create(card_0);
+
         lv_obj_t * row_1 = row_create(card_0);
         lv_obj_set_width(row_1, lv_pct(100));
         lv_obj_set_style_flex_main_place(row_1, LV_FLEX_ALIGN_CENTER, 0);

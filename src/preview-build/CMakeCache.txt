@@ -204,7 +204,7 @@ LVED_ENV:STRING=web
 LVED_INITIAL_MEMORY:STRING=67108864
 
 //LVGL version
-LVED_LVGL_VERSION:STRING=v9.4.0
+LVED_LVGL_VERSION:STRING=v9.5.0
 
 //Output directory
 LVED_OUTPUT_DIR:STRING=d:/PlatformIO/Projects/Monopoly/libs/Monopoly_GUI/src/preview-bin

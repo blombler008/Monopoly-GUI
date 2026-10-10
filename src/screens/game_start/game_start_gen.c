@@ -50,7 +50,22 @@ lv_obj_t * game_start_create(void)
         lv_obj_set_name_static(lv_obj_0, "game_start_#");
         lv_obj_set_style_bg_color(lv_obj_0, BG_PRIMARY_DARK, 0);
 
-        floating_back_button_create(lv_obj_0);
+        lv_obj_t * header_1 = header_create(lv_obj_0, "banking");
+        lv_obj_set_name(header_1, "header_1");
+
+        lv_obj_t * content_1 = content_create(lv_obj_0);
+        lv_obj_set_name(content_1, "content_1");
+        lv_obj_t * deposit_card = card_create(content_1);
+        lv_obj_set_name(deposit_card, "deposit_card");
+        label_create(deposit_card, "deposit");
+
+        lv_obj_t * withdraw_card = card_create(content_1);
+        lv_obj_set_name(withdraw_card, "withdraw_card");
+        label_create(withdraw_card, "withdraw");
+
+        lv_obj_t * transfer_card = card_create(content_1);
+        lv_obj_set_name(transfer_card, "transfer_card");
+        label_create(transfer_card, "transfer");
 
         the_root = lv_obj_0;
     }

@@ -9220,7 +9220,7 @@ function checkIncomingModuleAPI() {
 }
 
 var ASM_CONSTS = {
-  16955756: ($0, $1, $2) => {
+  16970476: ($0, $1, $2) => {
     var w = $0;
     var h = $1;
     var pixels = $2;
@@ -9291,7 +9291,7 @@ var ASM_CONSTS = {
     }
     SDL2.ctx.putImageData(SDL2.image, 0, 0);
   },
-  16957224: ($0, $1, $2, $3, $4) => {
+  16971944: ($0, $1, $2, $3, $4) => {
     var w = $0;
     var h = $1;
     var hot_x = $2;
@@ -9328,19 +9328,19 @@ var ASM_CONSTS = {
     stringToUTF8(url, urlBuf, url.length + 1);
     return urlBuf;
   },
-  16958212: $0 => {
+  16972932: $0 => {
     if (Module["canvas"]) {
       Module["canvas"].style["cursor"] = UTF8ToString($0);
     }
   },
-  16958295: () => {
+  16973015: () => {
     if (Module["canvas"]) {
       Module["canvas"].style["cursor"] = "none";
     }
   },
-  16958364: () => window.innerWidth,
-  16958394: () => window.innerHeight,
-  16958425: $0 => {
+  16973084: () => window.innerWidth,
+  16973114: () => window.innerHeight,
+  16973145: $0 => {
     var str = UTF8ToString($0) + "\n\n" + "Abort/Retry/Ignore/AlwaysIgnore? [ariA] :";
     var reply = window.prompt(str, "i");
     if (reply === null) {
@@ -9348,7 +9348,7 @@ var ASM_CONSTS = {
     }
     return allocate(intArrayFromString(reply), "i8", ALLOC_NORMAL);
   },
-  16958650: () => {
+  16973370: () => {
     if (typeof (AudioContext) !== "undefined") {
       return true;
     } else if (typeof (webkitAudioContext) !== "undefined") {
@@ -9356,7 +9356,7 @@ var ASM_CONSTS = {
     }
     return false;
   },
-  16958797: () => {
+  16973517: () => {
     if ((typeof (navigator.mediaDevices) !== "undefined") && (typeof (navigator.mediaDevices.getUserMedia) !== "undefined")) {
       return true;
     } else if (typeof (navigator.webkitGetUserMedia) !== "undefined") {
@@ -9364,7 +9364,7 @@ var ASM_CONSTS = {
     }
     return false;
   },
-  16959031: $0 => {
+  16973751: $0 => {
     if (typeof (Module["SDL2"]) === "undefined") {
       Module["SDL2"] = {};
     }
@@ -9388,11 +9388,11 @@ var ASM_CONSTS = {
     }
     return SDL2.audioContext === undefined ? -1 : 0;
   },
-  16959583: () => {
+  16974303: () => {
     var SDL2 = Module["SDL2"];
     return SDL2.audioContext.sampleRate;
   },
-  16959651: ($0, $1, $2, $3) => {
+  16974371: ($0, $1, $2, $3) => {
     var SDL2 = Module["SDL2"];
     var have_microphone = function(stream) {
       if (SDL2.capture.silenceTimer !== undefined) {
@@ -9434,7 +9434,7 @@ var ASM_CONSTS = {
       }, have_microphone, no_microphone);
     }
   },
-  16961344: ($0, $1, $2, $3) => {
+  16976064: ($0, $1, $2, $3) => {
     var SDL2 = Module["SDL2"];
     SDL2.audio.scriptProcessorNode = SDL2.audioContext["createScriptProcessor"]($1, 0, $0);
     SDL2.audio.scriptProcessorNode["onaudioprocess"] = function(e) {
@@ -9466,7 +9466,7 @@ var ASM_CONSTS = {
       SDL2.audio.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1e3);
     }
   },
-  16962519: ($0, $1) => {
+  16977239: ($0, $1) => {
     var SDL2 = Module["SDL2"];
     var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels;
     for (var c = 0; c < numChannels; ++c) {
@@ -9485,7 +9485,7 @@ var ASM_CONSTS = {
       }
     }
   },
-  16963124: ($0, $1) => {
+  16977844: ($0, $1) => {
     var SDL2 = Module["SDL2"];
     var buf = $0 >>> 2;
     var numChannels = SDL2.audio.currentOutputBuffer["numberOfChannels"];
@@ -9499,7 +9499,7 @@ var ASM_CONSTS = {
       }
     }
   },
-  16963613: $0 => {
+  16978333: $0 => {
     var SDL2 = Module["SDL2"];
     if ($0) {
       if (SDL2.capture.silenceTimer !== undefined) {
@@ -9870,6 +9870,8 @@ var _lvrt_initialize = Module["_lvrt_initialize"] = createExportWrapper("lvrt_in
 
 var _lvrt_initialize_headless = Module["_lvrt_initialize_headless"] = createExportWrapper("lvrt_initialize_headless", 2);
 
+var _lvrt_set_simple_theme = Module["_lvrt_set_simple_theme"] = createExportWrapper("lvrt_set_simple_theme", 0);
+
 var _lvrt_process_data = Module["_lvrt_process_data"] = createExportWrapper("lvrt_process_data", 5);
 
 var _lvrt_xml_load_component_data = Module["_lvrt_xml_load_component_data"] = createExportWrapper("lvrt_xml_load_component_data", 2);
@@ -9902,6 +9904,8 @@ var _lvrt_subscribe_subject = Module["_lvrt_subscribe_subject"] = createExportWr
 
 var _lvrt_resize_canvas = Module["_lvrt_resize_canvas"] = createExportWrapper("lvrt_resize_canvas", 2);
 
+var _lvrt_set_target = Module["_lvrt_set_target"] = createExportWrapper("lvrt_set_target", 1);
+
 var _lvrt_cleanup_runtime = Module["_lvrt_cleanup_runtime"] = createExportWrapper("lvrt_cleanup_runtime", 0);
 
 var _lvrt_play_timeline = Module["_lvrt_play_timeline"] = createExportWrapper("lvrt_play_timeline", 1);
@@ -9915,6 +9919,8 @@ var _lvrt_xml_test_run_next = Module["_lvrt_xml_test_run_next"] = createExportWr
 var _lvrt_xml_test_run_stop = Module["_lvrt_xml_test_run_stop"] = createExportWrapper("lvrt_xml_test_run_stop", 0);
 
 var _lvrt_health_check = Module["_lvrt_health_check"] = createExportWrapper("lvrt_health_check", 0);
+
+var _get_screenshot = Module["_get_screenshot"] = createExportWrapper("get_screenshot", 3);
 
 var _Monopoly_set_target = Module["_Monopoly_set_target"] = createExportWrapper("Monopoly_set_target", 1);
 

@@ -25,6 +25,10 @@ extern "C" {
     #include "lvgl/lvgl_private.h"
 #endif
 
+#if defined(LV_USE_XML) && LV_USE_XML
+    #include "lv_xml/lv_xml.h"
+#endif
+
 
 
 /* Prototypes for target functions, needed by responsive const definitions */
@@ -124,6 +128,8 @@ extern const void * bluetooth;
 extern const void * wifi;
 extern const void * nfc;
 extern const void * back_arrow;
+extern const void * icon_settings;
+extern const void * icon_delete;
 
 /*----------------
  * Subjects
@@ -184,6 +190,7 @@ void Monopoly_init_gen(const char * asset_path);
 #include "components/cards/gameSettingsCard/gameSettingsCard_gen.h"
 #include "components/cards/generalSettingsCard/generalSettingsCard_gen.h"
 #include "components/cards/playerSettingsCard/playerSettingsCard_gen.h"
+#include "components/complex/player_list_item/player_list_item_gen.h"
 #include "screens/about/about_gen.h"
 #include "screens/add_card/add_card_gen.h"
 #include "screens/game_start/game_start_gen.h"
