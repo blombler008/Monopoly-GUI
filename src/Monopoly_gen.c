@@ -297,6 +297,7 @@ void Monopoly_init_gen(const char * asset_path)
     lv_xml_register_subject(NULL, "language", &language);
 
     /* Register callbacks */
+    lv_xml_register_event_cb(NULL, "back_button_handler", back_button_handler);
 #endif
 
     /* Register all the global assets so that they won't be created again when globals.xml is parsed.
@@ -337,6 +338,13 @@ bool Monopoly_check_target(uint32_t target)
 }
 
 /* Callbacks */
+#if defined(LV_EDITOR_PREVIEW)
+void __attribute__((weak)) back_button_handler(lv_event_t * e)
+{
+    LV_UNUSED(e);
+    LV_LOG("back_button_handler was called\n");
+}
+#endif
 
 /**********************
  *   STATIC FUNCTIONS

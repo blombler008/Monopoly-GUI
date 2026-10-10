@@ -150,6 +150,8 @@ extern lv_subject_t language;
  * Event Callbacks
  *----------------*/
 
+void back_button_handler(lv_event_t * e);
+
 /**
  * Initialize the component library
  */

@@ -1,0 +1,36 @@
+<component>
+	<styles>
+		<style name="icon_button_style" width="32px" height="32px" bg_opa="0" />
+		<style
+			name="row_style"
+			width="100%"
+			height="content"
+			pad_all="4"
+			layout="flex"
+			flex_flow="row"
+			flex_main_place="space_between"
+			flex_cross_place="center"
+		/>
+	</styles>
+
+	<view>
+		<remove_style_all />
+		<style name="row_style" />
+		<!-- Spielername -->
+		<label name="player_name_label" text="player_name" width="140px" />
+
+		<!-- Settings Button -->
+		<button name="player_settings_btn" button_type="2">
+			<style name="icon_button_style" />
+			<lv_image src="icon_settings" align="center" />
+			<!-- <event_cb trigger="clicked" callback="open_player_settings" /> -->
+		</button>
+
+		<!-- Delete Button -->
+		<button name="player_delete_btn" button_type="2">
+			<style name="icon_button_style" />
+			<lv_image src="icon_delete" align="center" />
+			<!-- <event_cb trigger="clicked" callback="delete_player" /> -->
+		</button>
+	</view>
+</component>

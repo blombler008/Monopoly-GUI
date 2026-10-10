@@ -30,4 +30,11 @@
 	<translation tag="title" en="Monopoly" de="Monopoly" />
 	<translation tag="language" en="Language: " de="Sprache: " />
 	<translation tag="general_settings" en="Gerneral: " de="Allgemein: " />
+
+	<translation tag="game_stats" en="Game Stats" de="Spielstatistik" />
+	<translation tag="balance" en="Balance" de="Kontostand" />
+	<translation tag="deposit" en="Deposit" de="Einzahlen" />
+	<translation tag="withdraw" en="Withdraw" de="Auszahlen" />
+	<translation tag="transfer" en="Transfer" de="Überweisen" />
+	<translation tag="banking" en="Banking" de="Banking" />
 </translations>

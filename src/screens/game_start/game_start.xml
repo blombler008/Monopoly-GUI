@@ -1,5 +1,22 @@
 <screen permanent="true">
 	<view style_bg_color="#bg_primary_dark">
-		<floating_back_button />
+		<!-- <floating_back_button /> -->
+		<header name="header_1" title="banking" />
+		<content name="content_1">
+			<card name="deposit_card">
+				<label tag="deposit" />
+				<!-- <event_cb trigger="clicked" callback="bank_deposit" /> -->
+			</card>
+
+			<card name="withdraw_card">
+				<label tag="withdraw" />
+				<!-- <event_cb trigger="clicked" callback="bank_withdraw" /> -->
+			</card>
+
+			<card name="transfer_card">
+				<label tag="transfer" />
+				<!-- <event_cb trigger="clicked" callback="bank_transfer" /> -->
+			</card>
+		</content>
 	</view>
 </screen>

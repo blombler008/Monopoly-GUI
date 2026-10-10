@@ -29,5 +29,6 @@
 
 		<style name="style_button_activ" selector="pressed" />
 		<style name="style_button" />
+		<event_cb trigger="clicked" callback="back_button_handler" />
 	</view>
 </component>

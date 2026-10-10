@@ -112,6 +112,16 @@
 			file_format="png"
 			src_path="/images/arrow_back_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png"
 		/>
+		<file
+			name="icon_settings"
+			file_format="png"
+			src_path="/images/settings_20dp_E3E3E3_FILL1_wght400_GRAD0_opsz20.png"
+		/>
+		<file
+			name="icon_delete"
+			file_format="png"
+			src_path="/images/delete_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png"
+		/>
 	</images>
 
 	<styles>

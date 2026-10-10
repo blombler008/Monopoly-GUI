@@ -80,6 +80,7 @@ lv_obj_t * floating_back_button_create(lv_obj_t * parent)
 
         lv_obj_add_style(lv_button_0, &style_button_activ, LV_STATE_PRESSED);
         lv_obj_add_style(lv_button_0, &style_button, 0);
+        lv_obj_add_event_cb(lv_button_0, back_button_handler, LV_EVENT_CLICKED, NULL);
 
         the_root = lv_button_0;
     }
