@@ -1,12 +1,12 @@
 {
-  "font:Roboto_16": "7d746a37d08b5c42-cea47947f933d72e",
-  "font:Roboto_24": "7d746a37d08b5c42-cfff008f6fbaebad",
-  "font:RobotoB_16": "a914bc5015a34694-e662b3626e098cdb",
-  "font:RobotoB_24": "a914bc5015a34694-b0c8dfdd15758536",
-  "image:bluetooth": "2da837dbaf0df192-c86b925a47c0ed9b",
-  "image:wifi": "0223be8b1d92c19d-de6379d7901bbe97",
-  "image:nfc": "eab4b2e00a00e989-56d00d58c5f06741",
-  "image:back_arrow": "d5386e84bf2d2067-bf8d815df1aafb7f",
-  "image:icon_settings": "104ebb25c46fa462-18f4461534e5f94c",
-  "image:icon_delete": "88d6222d240112ac-ccc501bf4ca931cf"
+  "font:Roboto_16": "7d746a37d08b5c42-2c85c26ff367bee1",
+  "font:Roboto_24": "7d746a37d08b5c42-161e9b93ffcc94ae",
+  "font:RobotoB_16": "a914bc5015a34694-e45d77d8cd74386e",
+  "font:RobotoB_24": "a914bc5015a34694-cb35b00c45fdf71f",
+  "image:bluetooth": "2da837dbaf0df192-3244d66ed2078bb2",
+  "image:wifi": "0223be8b1d92c19d-3682d32c6e055746",
+  "image:nfc": "eab4b2e00a00e989-a1fb9bfc4823427a",
+  "image:back_arrow": "d5386e84bf2d2067-c967112cc6028bb6",
+  "image:icon_settings": "104ebb25c46fa462-f2e13ea192f96d35",
+  "image:icon_delete": "88d6222d240112ac-1182606bdf8f99fa"
 }

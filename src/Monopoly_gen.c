@@ -178,7 +178,7 @@ void Monopoly_init_gen(const char * asset_path)
             lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/RobotoB_24.bin");
             RobotoB_24 = lv_binfont_create(buf);
 
-        }
+        }   
     }
     #endif
 
@@ -191,32 +191,32 @@ void Monopoly_init_gen(const char * asset_path)
     if (Monopoly_check_target(MONOPOLY_TARGET_ALL)) {
         /* bluetooth */
         if (!bluetooth) {
-            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/bluetooth_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
+            lv_snprintf(buf, 256, "%s%s", asset_path, "images/bluetooth_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
             bluetooth = lv_strdup(buf);
         }
         /* wifi */
         if (!wifi) {
-            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/wifi_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
+            lv_snprintf(buf, 256, "%s%s", asset_path, "images/wifi_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
             wifi = lv_strdup(buf);
         }
         /* nfc */
         if (!nfc) {
-            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/contactless_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
+            lv_snprintf(buf, 256, "%s%s", asset_path, "images/contactless_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
             nfc = lv_strdup(buf);
         }
         /* back_arrow */
         if (!back_arrow) {
-            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/arrow_back_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
+            lv_snprintf(buf, 256, "%s%s", asset_path, "images/arrow_back_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
             back_arrow = lv_strdup(buf);
         }
         /* icon_settings */
         if (!icon_settings) {
-            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/settings_20dp_E3E3E3_FILL1_wght400_GRAD0_opsz20.png");
+            lv_snprintf(buf, 256, "%s%s", asset_path, "images/settings_20dp_E3E3E3_FILL1_wght400_GRAD0_opsz20.png");
             icon_settings = lv_strdup(buf);
         }
         /* icon_delete */
         if (!icon_delete) {
-            lv_snprintf(buf, 256, "%s%s", asset_path, "/images/delete_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
+            lv_snprintf(buf, 256, "%s%s", asset_path, "images/delete_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png");
             icon_delete = lv_strdup(buf);
         }
     }
