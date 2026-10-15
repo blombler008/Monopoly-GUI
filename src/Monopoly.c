@@ -42,6 +42,7 @@ void Monopoly_init(const char * asset_path)
     /* Add your own custom code here if needed */
 
     lv_subject_add_observer(&language, language_observer_cb, NULL);
+    lv_subject_add_observer(&rfid_audio_tags, rfid_audio_tags_enabled_observer_cb, NULL);
 }
 
 void load_screen(const char * name)

@@ -138,6 +138,7 @@ extern lv_subject_t player_count;
 extern lv_subject_t bluetooth_on;
 extern lv_subject_t wifi_on;
 extern lv_subject_t nfc_on;
+extern lv_subject_t rfid_audio_tags;
 extern lv_subject_t battery_level;
 extern lv_subject_t time_minutes;
 extern lv_subject_t time_hours;

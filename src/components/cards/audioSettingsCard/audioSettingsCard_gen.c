@@ -63,6 +63,13 @@ lv_obj_t * audioSettingsCard_create(lv_obj_t * parent)
         lv_obj_t * label_0 = label_create(row_0, "");
         lv_label_set_translation_tag(label_0, "audio_settings");
 
+        lv_obj_t * row_1 = row_create(card_0);
+        lv_obj_t * lv_checkbox_0 = lv_checkbox_create(row_1);
+        lv_obj_bind_checked(lv_checkbox_0, &rfid_audio_tags);
+        lv_checkbox_set_text(lv_checkbox_0, "");
+
+        label_create(row_1, "rfid_audio_tags_enable");
+
         the_root = lv_obj_0;
     }
     #endif

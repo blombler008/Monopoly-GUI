@@ -45,15 +45,15 @@
 		<int name="bluetooth_on" min_value="0" max_value="1" value="0" />
 		<int name="wifi_on" min_value="0" max_value="1" value="0" />
 		<int name="nfc_on" min_value="0" max_value="1" value="0" />
+		<int name="rfid_audio_tags" min_value="0" max_value="1" value="0" />
 		<int name="battery_level" min_value="0" max_value="100" value="50" />
-
 		<int name="time_minutes" min_value="0" max_value="59" value="34" />
 		<int name="time_hours" min_value="0" max_value="23" value="12" />
 
 		<int name="button_sec" value="0" />
 		<int name="button_pri" value="1" />
 		<int name="button_invis" value="2" />
-		<int name="language" value="0" max_value="1" min_value="0" />
+		<int name="language" value="1" max_value="1" min_value="0" />
 	</subjects>
 
 	<fonts memory="ext_flash">

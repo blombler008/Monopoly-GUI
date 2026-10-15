@@ -37,4 +37,5 @@
 	<translation tag="withdraw" en="Withdraw" de="Auszahlen" />
 	<translation tag="transfer" en="Transfer" de="Überweisen" />
 	<translation tag="banking" en="Banking" de="Banking" />
+	<translation tag="rfid_audio_tags_enable" en="Enable RFID Audio Tags" de="Aktiviere RFID Audio Tags" />
 </translations>

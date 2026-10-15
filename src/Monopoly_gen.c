@@ -37,7 +37,7 @@ static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
 
 #ifndef LV_EDITOR_PREVIEW
     static const char * translation_languages[] = {"en", "de", NULL};
-    static const char * translation_tags[] = {"back", "about", "settings", "cancel", "add_card", "searching_card", "player_settings", "audio_settings", "game_settings", "connection_settings", "text_welcome", "text_welcome_info", "game_start", "players", "start_cash", "gameinfo_display", "player_count", " ", "DE", "EN", " +", "  -", "title", "language", "general_settings", "game_stats", "balance", "deposit", "withdraw", "transfer", "banking", NULL};
+    static const char * translation_tags[] = {"back", "about", "settings", "cancel", "add_card", "searching_card", "player_settings", "audio_settings", "game_settings", "connection_settings", "text_welcome", "text_welcome_info", "game_start", "players", "start_cash", "gameinfo_display", "player_count", " ", "DE", "EN", " +", "  -", "title", "language", "general_settings", "game_stats", "balance", "deposit", "withdraw", "transfer", "banking", "rfid_audio_tags_enable", NULL};
     static const char * translation_texts[] = {
         "back", "zurück", /* back */
         "About", "Über", /* about */
@@ -70,6 +70,7 @@ static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
         "Withdraw", "Auszahlen", /* withdraw */
         "Transfer", "Überweisen", /* transfer */
         "Banking", "Banking", /* banking */
+        "Enable RFID Audio Tags", "Aktiviere RFID Audio Tags", /* rfid_audio_tags_enable */
     };
 #endif
 
@@ -120,6 +121,7 @@ lv_subject_t player_count;
 lv_subject_t bluetooth_on;
 lv_subject_t wifi_on;
 lv_subject_t nfc_on;
+lv_subject_t rfid_audio_tags;
 lv_subject_t battery_level;
 lv_subject_t time_minutes;
 lv_subject_t time_hours;
@@ -257,6 +259,9 @@ void Monopoly_init_gen(const char * asset_path)
     lv_subject_init_int(&nfc_on, 0);
     lv_subject_set_min_value_int(&nfc_on, 0);
     lv_subject_set_max_value_int(&nfc_on, 1);
+    lv_subject_init_int(&rfid_audio_tags, 0);
+    lv_subject_set_min_value_int(&rfid_audio_tags, 0);
+    lv_subject_set_max_value_int(&rfid_audio_tags, 1);
     lv_subject_init_int(&battery_level, 50);
     lv_subject_set_min_value_int(&battery_level, 0);
     lv_subject_set_max_value_int(&battery_level, 100);
@@ -269,7 +274,7 @@ void Monopoly_init_gen(const char * asset_path)
     lv_subject_init_int(&button_sec, 0);
     lv_subject_init_int(&button_pri, 1);
     lv_subject_init_int(&button_invis, 2);
-    lv_subject_init_int(&language, 0);
+    lv_subject_init_int(&language, 1);
     lv_subject_set_min_value_int(&language, 0);
     lv_subject_set_max_value_int(&language, 1);
 
@@ -304,6 +309,7 @@ void Monopoly_init_gen(const char * asset_path)
     lv_xml_register_subject(NULL, "bluetooth_on", &bluetooth_on);
     lv_xml_register_subject(NULL, "wifi_on", &wifi_on);
     lv_xml_register_subject(NULL, "nfc_on", &nfc_on);
+    lv_xml_register_subject(NULL, "rfid_audio_tags", &rfid_audio_tags);
     lv_xml_register_subject(NULL, "battery_level", &battery_level);
     lv_xml_register_subject(NULL, "time_minutes", &time_minutes);
     lv_xml_register_subject(NULL, "time_hours", &time_hours);

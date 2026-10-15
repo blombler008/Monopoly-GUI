@@ -19,6 +19,7 @@ extern "C" {
  *      DEFINES
  *********************/
 static void language_observer_cb(lv_observer_t * observer, lv_subject_t * subject); 
+void rfid_audio_tags_enabled_observer_cb(lv_observer_t * observer, lv_subject_t * subject);
 /**********************
  *      TYPEDEFS
  **********************/

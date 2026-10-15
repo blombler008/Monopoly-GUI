@@ -13,6 +13,10 @@
 			<row>
 				<label translation_tag="audio_settings" />
 			</row>
+			<row>
+				<lv_checkbox bind_checked="rfid_audio_tags" text="" />
+				<label tag="rfid_audio_tags_enable" />
+			</row>
 		</card>
 	</view>
 </component>
