@@ -52,6 +52,7 @@ void load_screen(const char * name)
     // lv_obj_t * scr = lv_xml_create_screen(name);
     // lv_scr_load(scr);
 }
+ 
 
 /**********************
  *   STATIC FUNCTIONS

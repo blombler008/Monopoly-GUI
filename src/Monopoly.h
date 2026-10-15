@@ -32,6 +32,7 @@ static void language_observer_cb(lv_observer_t * observer, lv_subject_t * subjec
  **********************/
 void back_button_handler(lv_event_t * e);
 void load_screen(const char * name);
+void add_card_cb(lv_event_t * e);
     
 /**
  * Initialize the component library

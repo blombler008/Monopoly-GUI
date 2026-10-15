@@ -1,4 +1,4 @@
-<screen permanent="true">
+<screen permanent="false">
 	<view>
 		<header title="title" />
 		<content>
@@ -19,7 +19,7 @@
 				<row width="100%" style_layout="none">
 					<label tag="gameinfo_display" align="left_mid" />
 					<button tag="settings" align="right_mid">
-						<screen_load_event screen="settings" trigger="clicked" />
+						<screen_create_event screen="settings" trigger="clicked" />
 					</button>
 				</row>
 

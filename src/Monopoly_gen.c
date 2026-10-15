@@ -82,8 +82,6 @@ static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
  *-------------------*/
 
 lv_obj_t * game_start = NULL;
-lv_obj_t * settings = NULL;
-lv_obj_t * welcome = NULL;
 
 /*----------------
  * Fonts
@@ -178,7 +176,7 @@ void Monopoly_init_gen(const char * asset_path)
             lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/RobotoB_24.bin");
             RobotoB_24 = lv_binfont_create(buf);
 
-        }   
+        }
     }
     #endif
 
@@ -316,6 +314,7 @@ void Monopoly_init_gen(const char * asset_path)
 
     /* Register callbacks */
     lv_xml_register_event_cb(NULL, "back_button_handler", back_button_handler);
+    lv_xml_register_event_cb(NULL, "add_card_cb", add_card_cb);
 #endif
 
     /* Register all the global assets so that they won't be created again when globals.xml is parsed.
@@ -337,8 +336,6 @@ void Monopoly_init_gen(const char * asset_path)
     /* If XML is enabled it's assumed that the permanent screens are created
      * manually from XML using lv_xml_create() */
     game_start_create();
-    settings_create();
-    welcome_create();
 #endif
 }
 
@@ -363,6 +360,11 @@ void __attribute__((weak)) back_button_handler(lv_event_t * e)
 {
     LV_UNUSED(e);
     LV_LOG("back_button_handler was called\n");
+}
+void __attribute__((weak)) add_card_cb(lv_event_t * e)
+{
+    LV_UNUSED(e);
+    LV_LOG("add_card_cb was called\n");
 }
 #endif
 

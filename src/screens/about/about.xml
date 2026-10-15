@@ -4,7 +4,7 @@
 		<content>
 			<lv_qrcode data="https://tattyhost.com" />
 			<button tag="back" button_type="2">
-				<screen_load_event screen="settings" trigger="clicked" />
+				<screen_create_event screen="settings" trigger="clicked" />
 			</button>
 		</content>
 	</view>

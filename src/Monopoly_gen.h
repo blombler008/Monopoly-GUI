@@ -98,8 +98,6 @@ bool Monopoly_check_target(uint32_t target);
  *------------------*/
 
 extern lv_obj_t * game_start;
-extern lv_obj_t * settings;
-extern lv_obj_t * welcome;
 
 /*----------------
  * Global styles
@@ -157,6 +155,7 @@ extern lv_subject_t language;
  *----------------*/
 
 void back_button_handler(lv_event_t * e);
+void add_card_cb(lv_event_t * e);
 
 /**
  * Initialize the component library

@@ -1,16 +1,16 @@
-<screen permanent="true">
+<screen permanent="false">
 	<view>
 		<header title="settings" />
 		<content>
-			<generalSettingsCard />
+			<!-- <generalSettingsCard /> -->
 			<playerSettingsCard />
-			<connectionSettingsCard />
-			<gameSettingsCard />
-			<audioSettingsCard />
+			<!-- <connectionSettingsCard /> -->
+			<!-- <gameSettingsCard /> -->
+			<!-- <audioSettingsCard /> -->
 
 			<row style_pad_column="#unit_xl">
 				<button tag="back" button_type="2">
-					<screen_load_event screen="welcome" trigger="clicked" />
+					<screen_create_event screen="welcome" trigger="clicked" />
 				</button>
 				<button tag="about" button_type="2">
 					<screen_create_event screen="about" trigger="clicked" />

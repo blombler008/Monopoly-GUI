@@ -34,19 +34,12 @@ lv_obj_t * welcome_create(void)
 {
     LV_TRACE_OBJ_CREATE("begin");
 
-    static bool screen_created = false;
-    if (screen_created) {
-        LV_LOG_WARN("`welcome` is already initialized as a permanent screen. Returning with no change.");
-        return welcome;
-    }
-
 
     lv_obj_t * the_root = NULL;
 
     #if MONOPOLY_CHECK_COMPILE_TARGET(MONOPOLY_TARGET_ALL)
     if (Monopoly_check_target(MONOPOLY_TARGET_ALL)) {
-        welcome = lv_obj_create(NULL);
-        lv_obj_t * lv_obj_0 = welcome;
+        lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
         lv_obj_set_name_static(lv_obj_0, "welcome_#");
 
         header_create(lv_obj_0, "title");
@@ -75,7 +68,7 @@ lv_obj_t * welcome_create(void)
 
         lv_obj_t * button_1 = button_create(row_0, "settings", 0);
         lv_obj_set_align(button_1, LV_ALIGN_RIGHT_MID);
-        lv_obj_add_screen_load_event(button_1, LV_EVENT_CLICKED, settings, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);
+        lv_obj_add_screen_create_event(button_1, LV_EVENT_CLICKED, settings_create, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);
 
         lv_obj_t * row_1 = row_create(card_1);
         lv_obj_set_width(row_1, lv_pct(100));
@@ -100,8 +93,6 @@ lv_obj_t * welcome_create(void)
         the_root = lv_obj_0;
     }
     #endif
-
-    if (the_root) screen_created = true;
 
     LV_TRACE_OBJ_CREATE("finished");
 

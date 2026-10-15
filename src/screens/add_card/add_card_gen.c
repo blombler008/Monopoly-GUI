@@ -63,7 +63,7 @@ lv_obj_t * add_card_create(void)
         lv_obj_set_height(div_0, 100);
 
         lv_obj_t * button_0 = button_create(content_0, "cancel", 2);
-        lv_obj_add_screen_load_event(button_0, LV_EVENT_CLICKED, settings, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);
+        lv_obj_add_screen_create_event(button_0, LV_EVENT_CLICKED, settings_create, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);
 
         the_root = lv_obj_0;
     }

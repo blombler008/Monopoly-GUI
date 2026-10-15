@@ -63,12 +63,11 @@ lv_obj_t * playerSettingsCard_create(lv_obj_t * parent)
         lv_obj_t * label_0 = label_create(row_0, "");
         lv_label_set_translation_tag(label_0, "player_settings");
 
-        player_list_item_create(card_0);
-
         lv_obj_t * row_1 = row_create(card_0);
         lv_obj_set_width(row_1, lv_pct(100));
         lv_obj_set_style_flex_main_place(row_1, LV_FLEX_ALIGN_CENTER, 0);
         lv_obj_t * button_0 = button_create(row_1, "add_card", 0);
+        lv_obj_add_event_cb(button_0, add_card_cb, LV_EVENT_CLICKED, NULL);
         lv_obj_add_screen_create_event(button_0, LV_EVENT_CLICKED, add_card_create, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);
 
         the_root = lv_obj_0;
