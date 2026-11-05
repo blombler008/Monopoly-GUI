@@ -76,6 +76,12 @@ static void language_observer_cb(lv_observer_t * observer, lv_subject_t * subjec
         break;
     }
 }
+
+__attribute__((weak))
+void rfid_audio_tags_enabled_observer_cb(lv_observer_t * observer, lv_subject_t * subject) { 
+
+}
+
 void back_button_handler(lv_event_t * e)
 {
     if(screen_history_index > 0) {

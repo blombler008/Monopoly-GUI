@@ -19,10 +19,17 @@ list(
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/generalSettingsCard/generalSettingsCard_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/playerSettingsCard/playerSettingsCard_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/complex/player_list_item/player_list_item_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/Roboto_Bold_ttf_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/Roboto_Bold_ttf_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/Roboto_Regular_ttf_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/Roboto_Regular_ttf_data.c
   ${CMAKE_CURRENT_LIST_DIR}/Monopoly_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/Monopoly.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/about/about_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/add_card/add_card_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/game_start/game_start_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/game/deposit/deposit_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/game/transfer/traansfer_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/game/withdraw/withdraw_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/settings/settings_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/welcome/welcome_gen.c)

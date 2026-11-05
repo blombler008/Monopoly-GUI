@@ -19,10 +19,8 @@ extern "C" {
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
     #include "lvgl.h"
-    #include "lvgl_private.h"
 #else
     #include "lvgl/lvgl.h"
-    #include "lvgl/lvgl_private.h"
 #endif
 
 #if defined(LV_USE_XML) && LV_USE_XML
@@ -52,38 +50,53 @@ bool Monopoly_check_target(uint32_t target);
 
 #define MONOPOLY_CHECK_COMPILE_TARGET(target) (MONOPOLY_COMPILE_TARGET & (target) ? 1 : 0)
 
-#define UNIT_SM 6
-#define UNIT_MD 12
-#define UNIT_LG 18
-#define UNIT_XL 24
-#define OPA_MUTED lv_pct(20)
-#define TEXT_COLOR lv_color_hex(0xdddddd)
-#define TEXT_COLOR_DARK lv_color_hex(0x0e0e0e)
-#define LIGHT lv_color_hex(0xffffff)
-#define DARK lv_color_hex(0x0e0e0e)
-#define SURFACE_PRIMARY_LIGHT lv_color_hex(0x0e0e0e)
-#define TEXT_ON_SURFACE_PRIMARY_LIGHT lv_color_hex(0xffffff)
-#define SURFACE_PRIMARY_DARK lv_color_hex(0xffffff)
-#define TEXT_ON_SURFACE_PRIMARY_DARK lv_color_hex(0x0e0e0e)
-#define BG_PRIMARY_LIGHT lv_color_hex(0xffffff)
-#define BG_PRIMARY_DARK lv_color_hex(0x0e0e0e)
-#define BG_SECONDARY_LIGHT lv_color_hex(0xf0f0f0)
-#define BG_SECONDARY_DARK lv_color_hex(0x373130)
-#define BG_TERTIARY_LIGHT lv_color_hex(0xf0f0f0)
-#define BG_TERTIARY_DARK lv_color_hex(0x373130)
-#define ACCENT1_LIGHT lv_color_hex(0xAF4ADE)
-#define ACCENT1_DARK lv_color_hex(0xAF4ADE)
-#define ACCENT1_50_LIGHT lv_color_hex(0xD2B1F6)
-#define ACCENT1_50_DARK lv_color_hex(0x7E4CB7)
-#define ACCENT2_LIGHT lv_color_hex(0xe9deaf)
-#define ACCENT2_DARK lv_color_hex(0x887A3D)
-#define ACCENT2_50_LIGHT lv_color_hex(0xf3f0e7)
-#define ACCENT2_50_DARK lv_color_hex(0x4A473E)
+#define UNIT_SM (6)
+#define UNIT_MD (12)
+#define UNIT_LG (18)
+#define UNIT_XL (24)
+#define OPA_MUTED (lv_pct(20))
+#define TEXT_COLOR (lv_color_hex(0xdddddd))
+#define TEXT_COLOR_DARK (lv_color_hex(0x0e0e0e))
+#define LIGHT (lv_color_hex(0xffffff))
+#define DARK (lv_color_hex(0x0e0e0e))
+#define SURFACE_PRIMARY_LIGHT (lv_color_hex(0x0e0e0e))
+#define TEXT_ON_SURFACE_PRIMARY_LIGHT (lv_color_hex(0xffffff))
+#define SURFACE_PRIMARY_DARK (lv_color_hex(0xffffff))
+#define TEXT_ON_SURFACE_PRIMARY_DARK (lv_color_hex(0x0e0e0e))
+#define BG_PRIMARY_LIGHT (lv_color_hex(0xffffff))
+#define BG_PRIMARY_DARK (lv_color_hex(0x0e0e0e))
+#define BG_SECONDARY_LIGHT (lv_color_hex(0xf0f0f0))
+#define BG_SECONDARY_DARK (lv_color_hex(0x373130))
+#define BG_TERTIARY_LIGHT (lv_color_hex(0xf0f0f0))
+#define BG_TERTIARY_DARK (lv_color_hex(0x373130))
+#define ACCENT1_LIGHT (lv_color_hex(0xAF4ADE))
+#define ACCENT1_DARK (lv_color_hex(0xAF4ADE))
+#define ACCENT1_50_LIGHT (lv_color_hex(0xD2B1F6))
+#define ACCENT1_50_DARK (lv_color_hex(0x7E4CB7))
+#define ACCENT2_LIGHT (lv_color_hex(0xe9deaf))
+#define ACCENT2_DARK (lv_color_hex(0x887A3D))
+#define ACCENT2_50_LIGHT (lv_color_hex(0xf3f0e7))
+#define ACCENT2_50_DARK (lv_color_hex(0x4A473E))
 
 
 #ifndef LV_XML_EVAL_STRING_BUF_SIZE
     #define LV_XML_EVAL_STRING_BUF_SIZE 256
 #endif
+
+/**
+ * Animation path of a style transition with a `bezier(…)` easing. The control
+ * points come from the transition descriptor's `user_data`, as a transition
+ * descriptor cannot store animation parameters itself.
+ */
+static inline int32_t Monopoly_style_transition_bezier_path_helper(const lv_anim_t * a)
+{
+    const lv_anim_bezier3_para_t * para = (const lv_anim_bezier3_para_t *)lv_anim_get_user_data(a);
+    if(para == NULL) return lv_anim_path_linear(a);
+
+    lv_anim_t a_tmp = *a;
+    lv_anim_set_bezier3_param(&a_tmp, para->x1, para->y1, para->x2, para->y2);
+    return lv_anim_path_custom_bezier3(&a_tmp);
+}
 
 /**********************
  *      TYPEDEFS
@@ -98,6 +111,8 @@ bool Monopoly_check_target(uint32_t target);
  *------------------*/
 
 extern lv_obj_t * game_start;
+extern lv_obj_t * settings;
+extern lv_obj_t * welcome;
 
 /*----------------
  * Global styles
@@ -158,6 +173,10 @@ extern lv_subject_t language;
 void back_button_handler(lv_event_t * e);
 void add_card_cb(lv_event_t * e);
 
+/*----------------
+ * Easing Callbacks
+ *----------------*/
+
 /**
  * Initialize the component library
  */
@@ -194,6 +213,9 @@ void Monopoly_init_gen(const char * asset_path);
 #include "screens/about/about_gen.h"
 #include "screens/add_card/add_card_gen.h"
 #include "screens/game_start/game_start_gen.h"
+#include "screens/game/deposit/deposit_gen.h"
+#include "screens/game/transfer/traansfer_gen.h"
+#include "screens/game/withdraw/withdraw_gen.h"
 #include "screens/settings/settings_gen.h"
 #include "screens/welcome/welcome_gen.h"
 

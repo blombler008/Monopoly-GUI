@@ -6,7 +6,7 @@
  *      INCLUDES
  *********************/
 
-#include "Monopoly_gen.h"
+#include "Monopoly.h"
 
 #if defined(LV_USE_XML) && LV_USE_XML
 #endif /* LV_USE_XML */
@@ -29,7 +29,7 @@ static void check_font(lv_font_t ** font, const char * name);
  *  STATIC VARIABLES
  **********************/
 
-static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
+static uint32_t Monopoly_target = MONOPOLY_COMPILE_TARGET;
 
 /*----------------
  * Translations
@@ -83,14 +83,20 @@ static uint32_t Monopoly_target = MONOPOLY_TARGET_ALL;
  *-------------------*/
 
 lv_obj_t * game_start = NULL;
+lv_obj_t * settings = NULL;
+lv_obj_t * welcome = NULL;
 
 /*----------------
  * Fonts
  *----------------*/
 
 lv_font_t * Roboto_16;
+extern uint8_t Roboto_Regular_ttf_data[];
+extern size_t Roboto_Regular_ttf_data_size;
 lv_font_t * Roboto_24;
 lv_font_t * RobotoB_16;
+extern uint8_t Roboto_Bold_ttf_data[];
+extern size_t Roboto_Bold_ttf_data_size;
 lv_font_t * RobotoB_24;
 
 /*----------------
@@ -153,30 +159,26 @@ void Monopoly_init_gen(const char * asset_path)
     if (Monopoly_check_target(MONOPOLY_TARGET_ALL)) {
         if (!Roboto_16) {
             /* Roboto_16 */
-            /* create bin font 'Roboto_16' from file */
-            lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Roboto_16.bin");
-            Roboto_16 = lv_binfont_create(buf);
+            /* create tiny ttf font 'Roboto_16' from C array */
+            Roboto_16 = lv_tiny_ttf_create_data(Roboto_Regular_ttf_data, Roboto_Regular_ttf_data_size, 16);
 
         }
         if (!Roboto_24) {
             /* Roboto_24 */
-            /* create bin font 'Roboto_24' from file */
-            lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Roboto_24.bin");
-            Roboto_24 = lv_binfont_create(buf);
+            /* create tiny ttf font 'Roboto_24' from C array */
+            Roboto_24 = lv_tiny_ttf_create_data(Roboto_Regular_ttf_data, Roboto_Regular_ttf_data_size, 24);
 
         }
         if (!RobotoB_16) {
             /* RobotoB_16 */
-            /* create bin font 'RobotoB_16' from file */
-            lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/RobotoB_16.bin");
-            RobotoB_16 = lv_binfont_create(buf);
+            /* create tiny ttf font 'RobotoB_16' from C array */
+            RobotoB_16 = lv_tiny_ttf_create_data(Roboto_Bold_ttf_data, Roboto_Bold_ttf_data_size, 16);
 
         }
         if (!RobotoB_24) {
             /* RobotoB_24 */
-            /* create bin font 'RobotoB_24' from file */
-            lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/RobotoB_24.bin");
-            RobotoB_24 = lv_binfont_create(buf);
+            /* create tiny ttf font 'RobotoB_24' from C array */
+            RobotoB_24 = lv_tiny_ttf_create_data(Roboto_Bold_ttf_data, Roboto_Bold_ttf_data_size, 24);
 
         }
     }
@@ -321,6 +323,8 @@ void Monopoly_init_gen(const char * asset_path)
     /* Register callbacks */
     lv_xml_register_event_cb(NULL, "back_button_handler", back_button_handler);
     lv_xml_register_event_cb(NULL, "add_card_cb", add_card_cb);
+
+    /* Register easing callbacks */
 #endif
 
     /* Register all the global assets so that they won't be created again when globals.xml is parsed.
@@ -341,7 +345,14 @@ void Monopoly_init_gen(const char * asset_path)
      *-------------------*/
     /* If XML is enabled it's assumed that the permanent screens are created
      * manually from XML using lv_xml_create() */
+    /* Create all the permanent screens first so that they can reference each other */
+    game_start = lv_obj_create(NULL);
+    settings = lv_obj_create(NULL);
+    welcome = lv_obj_create(NULL);
+
     game_start_create();
+    settings_create();
+    welcome_create();
 #endif
 }
 

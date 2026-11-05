@@ -17,6 +17,9 @@
 				<label tag="transfer" />
 				<!-- <event_cb trigger="clicked" callback="bank_transfer" /> -->
 			</card>
+			<floating_back_button>
+				<screen_load_event trigger="clicked" screen="welcome" />
+			</floating_back_button>
 		</content>
 	</view>
 </screen>

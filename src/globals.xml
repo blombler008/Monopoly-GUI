@@ -1,6 +1,7 @@
 <globals>
 	<api>
 		<!-- Add <enumdefs> here -->
+		
 	</api>
 
 	<consts>
@@ -56,45 +57,30 @@
 		<int name="language" value="1" max_value="1" min_value="0" />
 	</subjects>
 
-	<fonts memory="ext_flash">
-		<!-- Add <bin> , <tiny_ttf>, <freetype> tags here -->
-		<bin
-			src_path="/fonts/Roboto-Regular.ttf"
+	<fonts memory="int_flash">
+		<!-- Nutzt den integrierten TTF-Parser des Editors für die Live-Vorschau -->
+		<tiny_ttf
+			src_path="fonts/Roboto-Regular.ttf"
 			name="Roboto_16"
-			range="0x20-0x7F"
-			symbols="äöüÄÖÜß←"
-			as_file="true"
 			size="16"
-			bpp="4"
 		/>
-
-		<bin
-			src_path="/fonts/Roboto-Regular.ttf"
+		
+		<tiny_ttf
+			src_path="fonts/Roboto-Regular.ttf"
 			name="Roboto_24"
-			range="0x20-0x7F"
-			symbols="äöüÄÖÜß←"
-			as_file="true"
 			size="24"
-			bpp="4"
 		/>
 
-		<bin
-			src_path="/fonts/Roboto-Bold.ttf"
+		<tiny_ttf
+			src_path="fonts/Roboto-Bold.ttf"
 			name="RobotoB_16"
-			range="0x20-0x7F"
-			symbols="äöüÄÖÜß←"
-			as_file="true"
 			size="16"
-			bpp="4"
 		/>
-		<bin
-			src_path="/fonts/Roboto-Bold.ttf"
+		
+		<tiny_ttf
+			src_path="fonts/Roboto-Bold.ttf"
 			name="RobotoB_24"
-			range="0x20-0x7F"
-			symbols="äöüÄÖÜß←"
-			as_file="true"
 			size="24"
-			bpp="4"
 		/>
 	</fonts>
 

@@ -45,7 +45,6 @@ lv_obj_t * game_start_create(void)
 
     #if MONOPOLY_CHECK_COMPILE_TARGET(MONOPOLY_TARGET_ALL)
     if (Monopoly_check_target(MONOPOLY_TARGET_ALL)) {
-        game_start = lv_obj_create(NULL);
         lv_obj_t * lv_obj_0 = game_start;
         lv_obj_set_name_static(lv_obj_0, "game_start_#");
         lv_obj_set_style_bg_color(lv_obj_0, BG_PRIMARY_DARK, 0);
@@ -66,6 +65,9 @@ lv_obj_t * game_start_create(void)
         lv_obj_t * transfer_card = card_create(content_1);
         lv_obj_set_name(transfer_card, "transfer_card");
         label_create(transfer_card, "transfer");
+
+        lv_obj_t * floating_back_button_0 = floating_back_button_create(content_1);
+        lv_obj_add_screen_load_event(floating_back_button_0, LV_EVENT_CLICKED, welcome, LV_SCREEN_LOAD_ANIM_NONE, 0, 0);
 
         the_root = lv_obj_0;
     }

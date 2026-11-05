@@ -24,11 +24,12 @@
 			width="content"
 			radius="4px"
 			pad_all="8px"
+			
 		/>
 		<style name="style_button_activ" bg_opa="127" />
 	</styles>
 
-	<view extends="lv_button">
+	<view extends="lv_button" >
 		<label tag="$tag" />
 		<style name="style_button_activ" selector="pressed" />
 		<style name="style_button" />

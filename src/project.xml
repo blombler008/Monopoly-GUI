@@ -5,6 +5,9 @@
 			<memory name="int_ram" size="32KB" />
 			<memory name="int_flash" size="1MB" bandwidth="100MB/s" />
 			<memory name="ext_flash" size="1GB" bandwidth="2MB/s" />
+			
 		</target>
+		
 	</targets>
+	
 </project>
